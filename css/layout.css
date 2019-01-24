@@ -1,0 +1,313 @@
+html {
+    -webkit-overflow-y: scroll;
+    overflow-y: hidden;
+}
+
+body {
+    margin: 0;
+    background-image: url('http://i.imgur.com/q4iobPQ.jpg');
+    background-attachment: fixed;
+    background-position: center, center, 0;
+    background-repeat: none;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+
+#one {
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    width: 35%;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#one nav a {
+    display: inline-block;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 15px;
+    opacity: 0.9;
+}
+
+#one:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#three {
+    background-color: rgba(255, 255, 255, 0.0);
+    /* width: 1153px; */
+    padding-top: 50px;
+    min-width: 720px;
+    text-align: center;
+    /* margin-left: 20%; */
+}
+
+.next:active,
+.prev:active {
+    -webkit-transform: scale(0.9, 0.9);
+    -ms-transform: scale(0.9, 0.9);
+    transform: scale(0.9, 0.9);
+}
+
+.prev {
+    display: inline-block;
+    float: right;
+    width: 70px;
+    cursor: pointer;
+    margin-top: 17%;
+    position: absolute;
+    left: 0;
+    right: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.next {
+    display: inline-block;
+    float: left;
+    width: 70px;
+    cursor: pointer;
+    margin-top: 17%;
+    position: absolute;
+    left: 55%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+#three .img-wrap img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    max-width: 50%;
+    min-width: 600px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+footer a {
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    width: 100px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    left: 0;
+    text-align: center;
+    font-size: 0.9vw;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+}
+
+.title {
+    color: azure;
+    opacity: 0;
+    font-size: 100px;
+    text-shadow: 0px 0px 60px black;
+}
+
+.title2 {
+    color: white;
+    display: block;
+    font-size: 40px;
+    font-style: oblique;
+    opacity: 0;
+    margin-top: -25px;
+    margin-bottom: -40px;
+    text-shadow: 0px 0px 60px black;
+}
+
+#titulo {
+    text-shadow: 0px 0px 40px rgba(0, 0, 0, 0.7);
+    font-size: 1.9vw;
+    color: whitesmoke;
+    text-align: center;
+    /*    margin: 140px auto;*/
+    margin: 7vw auto;
+    margin-bottom: -6%;
+    font-family: 'Raleway', sans-serif;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+#menu_box {
+    background-color: rgba(255, 255, 255, 0.4);
+    font-family: Century Gothic, sans-serif;
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 7px;
+    width: 30%;
+    min-width: 200px;
+    /* margin-top: -8.0%; */
+    margin-top: 5vw;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.6)
+}
+
+.main_menu {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    /*      font-size: 40px;  */
+    font-size: 2vw;
+    position: relative;
+    left: -20px;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    text-shadow: 0px 0px 20px white;
+}
+
+.sub_menu {
+    font-size: 1vw;
+    padding: 1px;
+    padding-right: 8px;
+    padding-left: 6px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    left: -39px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+    font-style: oblique;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sub_menu:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-position: inside;
+    text-align: center;
+    list-style-type: none;
+    margin-top: -60px;
+}
+
+#info {
+    font-family: sans-serif;
+    opacity: 0.8;
+    display: inline-block;
+    float: left;
+    position: fixed;
+    left: 5%;
+    top: 55%;
+    text-align: center;
+    background-color: lightgrey;
+    padding: 10px;
+    text-shadow: 0px 0px 8px white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+
+/* #loading_area {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
+    font-family: sans-serif;
+    display: inline-block;
+    float: right;
+    position: fixed;
+    right: 42.1%;
+    top: 45%;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 0px 0px 8px white;
+    z-index: 999;
+} */
+
+#loading_area {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9); */
+    font-family: sans-serif;
+    display: inline-block;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 150px;
+    left: 0;
+    right: 0;
+    width: 400px;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 0px 0px 8px white;
+    z-index: 999;
+}
+
+#progress {
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    ;
+}
+
+#num {
+    font-size: 20px;
+    text-align: center;
+}
+
+iframe {
+    margin-top: 100px;
+    box-shadow: 0px 0px 20px black;
+}
+
+#video_page {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.sub_menu_soon {
+    font-size: 1vw;
+    padding: 1px;
+    padding-right: 8px;
+    padding-left: 6px;
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+    position: relative;
+    left: -39px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+    font-style: oblique;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+header img {
+width:28.4%;
+}
+
+
+
+img.notfound {
+    position: absolute;
+bottom: 0;
+
+}
+
+span.notfound {
+ font-family: 'Ubuntu', sans-serif;
+font-size: 60px;
+    position: absolute;
+    bottom:140px;
+    left:500px;
+    
+    
+}
