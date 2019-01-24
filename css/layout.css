@@ -5,7 +5,7 @@ html {
 
 body {
     margin: 0;
-    background-image: url('http://i.imgur.com/q4iobPQ.jpg');
+    background-image: url('https://blog.spoongraphics.co.uk/wp-content/uploads/2012/textures/25.jpg');
     background-attachment: fixed;
     background-position: center, center, 0;
     background-repeat: none;
@@ -137,12 +137,11 @@ footer a {
 
 #titulo {
     text-shadow: 0px 0px 40px rgba(0, 0, 0, 0.7);
-    font-size: 1.9vw;
-    color: whitesmoke;
+    font-size: 40px;
     text-align: center;
     /*    margin: 140px auto;*/
-    margin: 7vw auto;
-    margin-bottom: -6%;
+    margin: 12vw auto;
+    margin-bottom: -8%;
     font-family: 'Raleway', sans-serif;
     -webkit-transition: 0.3s;
     transition: 0.3s;
@@ -150,17 +149,16 @@ footer a {
 }
 
 #menu_box {
-    background-color: rgba(255, 255, 255, 0.4);
-    font-family: Century Gothic, sans-serif;
+/*    background-color: rgba(0, 0, 0, 0.06);*/
+    font-family: "Times New Roman", Times, serif;
     color: #333;
     margin: 0 auto;
     text-align: center;
     padding-bottom: 7px;
-    width: 30%;
     min-width: 200px;
     /* margin-top: -8.0%; */
-    margin-top: 5vw;
-    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.6)
+    margin-top: 7vw;
+    /* box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.6) */
 }
 
 .main_menu {
@@ -168,7 +166,7 @@ footer a {
     text-decoration: none;
     color: black;
     /*      font-size: 40px;  */
-    font-size: 2vw;
+    font-size: 20px;
     position: relative;
     left: -20px;
     -webkit-transition: 0.3s all;
@@ -179,18 +177,19 @@ footer a {
 }
 
 .sub_menu {
-    font-size: 1vw;
+    font-size: 20px;
     padding: 1px;
     padding-right: 8px;
     padding-left: 6px;
     text-decoration: none;
     color: black;
+    font-family: "Times New Roman", Times, serif;
     position: relative;
     left: -39px;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
     font-style: oblique;
-    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    text-shadow: 0px 0px 8px rgba(150, 75, 0, 0.2);
 }
 
 .sub_menu:hover {
@@ -276,13 +275,14 @@ iframe {
 }
 
 .sub_menu_soon {
-    font-size: 1vw;
+    font-size: 20px;
     padding: 1px;
     padding-right: 8px;
     padding-left: 6px;
     text-decoration: none;
     color: black;
     opacity: 0.5;
+    font-family: "Times New Roman", Times, serif;
     position: relative;
     left: -39px;
     -webkit-transition: 0.2s all;
@@ -310,4 +310,17 @@ font-size: 60px;
     left:500px;
     
     
+}
+
+h1 {
+      font-family: "Times New Roman", Times, serif;
+    text-shadow: none;
+    color: #563b2b;
+      font-weight: bold;
+
+}
+
+footer {
+    position:fixed;
+    bottom:0;
 }
