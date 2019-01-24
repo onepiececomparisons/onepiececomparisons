@@ -1,7 +1,9 @@
+/*
 html {
     -webkit-overflow-y: scroll;
     overflow-y: hidden;
 }
+*/
 
 body {
     margin: 0;
@@ -324,3 +326,9 @@ footer {
     position:fixed;
     bottom:0;
 }
+
+
+
+
+
+
