@@ -105,19 +105,7 @@ body {
     cursor: pointer;
 }
 
-footer a {
-    font-family: 'Ubuntu', sans-serif;
-    color: white;
-    width: 100px;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    text-decoration: none;
-    left: 0;
-    text-align: center;
-    font-size: 0.9vw;
-    text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
-}
+
 
 .title {
     color: azure;
@@ -151,7 +139,7 @@ footer a {
 }
 
 #menu_box {
-/*    background-color: rgba(0, 0, 0, 0.06);*/
+    /*    background-color: rgba(0, 0, 0, 0.06);*/
     font-family: "Times New Roman", Times, serif;
     color: #333;
     margin: 0 auto;
@@ -292,43 +280,82 @@ iframe {
     font-style: oblique;
     text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
 }
+
 header img {
-width:28.4%;
+    width: 28.4%;
 }
 
 
 
 img.notfound {
     position: absolute;
-bottom: 0;
+    bottom: 0;
 
 }
 
 span.notfound {
- font-family: 'Ubuntu', sans-serif;
-font-size: 60px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 60px;
     position: absolute;
-    bottom:140px;
-    left:500px;
-    
-    
+    bottom: 140px;
+    left: 500px;
+
+
 }
 
 h1 {
-      font-family: "Times New Roman", Times, serif;
+    font-family: "Times New Roman", Times, serif;
     text-shadow: none;
     color: #563b2b;
-      font-weight: bold;
+    font-weight: bold;
 
 }
 
 footer {
-    position:fixed;
-    bottom:0;
+    text-align: center;
+    margin-left: 12px;
+    text-shadow: 0px 0px 20px white;
 }
 
 
+#rss {
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+    width: 30px;
+    opacity: 1;
+    border-style: none:
+    -webkit-filter: sepia(100%);
+    filter: sepia(100%);
+}
 
+#imgur {
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+    opacity: 0.5;
+    width: 40px;
+    -webkit-filter: sepia(100%);filter: sepia(100%);
 
+}
 
+#cyatek {
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+    display: block;
+    position: relative;
+    margin:0 auto;
+    left: -3px;
+    width: 70px;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    text-decoration: none;
+    opacity: 0.5;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+}
 
+#rss:hover,
+#imgur:hover,
+#cyatek:hover {
+    opacity: 1;
+    -webkit-filter: sepia(0%);
+    filter: sepia(0%);
+}
