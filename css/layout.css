@@ -315,6 +315,7 @@ footer {
     text-align: center;
     margin-left: 12px;
     text-shadow: 0px 0px 20px white;
+    
 }
 
 
@@ -323,12 +324,13 @@ footer {
     transition: 0.2s all;
     width: 30px;
     opacity: 1;
-    border-style: none:
     -webkit-filter: sepia(100%);
     filter: sepia(100%);
+
 }
 
 #imgur {
+    
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
     opacity: 0.5;
@@ -358,4 +360,9 @@ footer {
     opacity: 1;
     -webkit-filter: sepia(0%);
     filter: sepia(0%);
+}
+a 
+{
+  border: 0 none;
+    text-decoration: none;
 }
