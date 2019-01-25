@@ -2,8 +2,12 @@
 <rss version="2.0">
 
 <channel>
-  <title>punkhazard</title>
-  <link>https://onepiececomparisons.github.io/manga/onepiece/punkhazard.html</link>
+  <title>One Piece Comparisons</title>
+  <link>https://onepiececomparisons.github.io/</link>
+  <item>
+    <title>punkhazard</title>
+    <link>https://onepiececomparisons.github.io/manga/onepiece/punkhazard.html</link>
+  </item>
   <item>
     <title>fishman island</title>
     <link>https://onepiececomparisons.github.io/manga/onepiece/fishman.html</link>
