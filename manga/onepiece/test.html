@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manga Comparison</title>
+    <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <script type="text/javascript" src="/js/main.js"></script>
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Ubuntu:700'>
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/main.js"></script>
+</head>
+<body>
+    <header id="one">
+        <nav>
+            <a href="/index.html">BACK</a>
+        </nav>
+    </header>
+    <script src="/js/main.js"></script>
+    <section id="three">
+        <span class="title">One Piece</span>
+        <span class="title2">Enies Lobby Arc</span>
+        <script type="text/javascript" src="/js/jQuery.preloadImages.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var imgList = [
+
+            ];
+                var galleryHtml = '';
+                $(imgList).preloadImages(function (isSucceed, finishedCount, len, src) {
+                    var per = parseInt((finishedCount / len) * 100);
+                    $('#num').text(finishedCount + ' / ' + len);
+                    $('#progress').css({
+                        width: per + '%'
+                    });
+                    if (isSucceed) {
+                        galleryHtml += '<li><a target="_blank" href="' + src + '"><img src="' + src + '" alt=""/></a></li>';
+                    }
+                }, function (succeedCount, len) {
+                    $('#gallery').html(galleryHtml);
+                    $('#summary').text('Total: ' + len + ' Succeed: ' + succeedCount).show();
+                    setTimeout(function () {
+                        $('#loading_area').fadeTo(500, 0, function () {
+                            $('#loading_area').css("visibility", "hidden");
+                        });
+                        $('.title').fadeTo(500, 1, function () {
+                            $('.title').css("opacity", "0.9");
+                        });
+                        $('.title2').fadeTo(500, 1, function () {
+                            $('.title2').css("opacity", "0.8");
+                        });
+                    }, 2000)
+                })
+            })
+        </script>
+        <div id="loading_area">
+            <span>Preloading images for easier viewing</span>
+            <div id="progress"></div>
+            <div id="num"></div>
+            <span>Switching images might misbehave while preloading</span>
+        </div>
+        <div id="img"></div>
+        <div id="img-grp-wrap">
+            <div class="img-wrap">
+                <img src='enieslobby/1a.jpg' onclick="swapImg(this,'enieslobby/1b.jpg','enieslobby/1a.jpg',1);" />
+                <img src='enieslobby/2a.jpg' onclick="swapImg(this,'enieslobby/2b.jpg','enieslobby/2a.jpg',1);" />
+                <img src='enieslobby/3a.jpg' onclick="swapImg(this,'enieslobby/3b.jpg','enieslobby/3a.jpg',1);" />
+                <img src='enieslobby/4a.jpg' onclick="swapImg(this,'enieslobby/4b.jpg','enieslobby/4a.jpg',1);" />
+                <img src='enieslobby/5a.jpg' onclick="swapImg(this,'enieslobby/5b.jpg','enieslobby/5a.jpg',1);" />
+                <img src='enieslobby/6a.jpg' onclick="swapImg(this,'enieslobby/6b.jpg','enieslobby/6a.jpg',1);" />
+                <img src='enieslobby/7a.jpg' onclick="swapImg(this,'enieslobby/7b.jpg','enieslobby/7a.jpg',1);" />
+                <img src='enieslobby/8a.jpg' onclick="swapImg(this,'enieslobby/8b.jpg','enieslobby/8a.jpg',1);" />
+                <img src='enieslobby/9a.jpg' onclick="swapImg(this,'enieslobby/9b.jpg','enieslobby/9a.jpg',1);" />
+                <img src='enieslobby/10a.jpg' onclick="swapImg(this,'enieslobby/10b.jpg','enieslobby/10a.jpg',1);" />
+                <img src='enieslobby/11a.jpg' onclick="swapImg(this,'enieslobby/11b.jpg','enieslobby/11a.jpg',1);" />
+                <img src='enieslobby/12a.jpg' onclick="swapImg(this,'enieslobby/12b.jpg','enieslobby/12a.jpg',1);" />
+                <img src='enieslobby/13a.jpg' onclick="swapImg(this,'enieslobby/13b.jpg','enieslobby/13a.jpg',1);" />
+                <img src='enieslobby/14a.jpg' onclick="swapImg(this,'enieslobby/14b.jpg','enieslobby/14a.jpg',1);" />
+                <img src='enieslobby/15a.jpg' onclick="swapImg(this,'enieslobby/15b.jpg','enieslobby/15a.jpg',1);" />
+                <img src='enieslobby/16a.jpg' onclick="swapImg(this,'enieslobby/16b.jpg','enieslobby/16a.jpg',1);" />
+                <img src='enieslobby/17a.jpg' onclick="swapImg(this,'enieslobby/17b.jpg','enieslobby/17a.jpg',1);" />
+                <img src='enieslobby/18a.jpg' onclick="swapImg(this,'enieslobby/18b.jpg','enieslobby/18a.jpg',1);" />
+                <img src='enieslobby/19a.jpg' onclick="swapImg(this,'enieslobby/19b.jpg','enieslobby/19a.jpg',1);" />
+                <img src='enieslobby/20a.jpg' onclick="swapImg(this,'enieslobby/20b.jpg','enieslobby/20a.jpg',1);" />
+                <img src='enieslobby/21a.jpg' onclick="swapImg(this,'enieslobby/21b.jpg','enieslobby/21a.jpg',1);" />
+                <img src='enieslobby/22a.jpg' onclick="swapImg(this,'enieslobby/22b.jpg','enieslobby/22a.jpg',1);" />
+                <img src='enieslobby/23a.jpg' onclick="swapImg(this,'enieslobby/23b.jpg','enieslobby/23a.jpg',1);" />
+                <img src='enieslobby/24a.jpg' onclick="swapImg(this,'enieslobby/24b.jpg','enieslobby/24a.jpg',1);" />
+                <img src='enieslobby/25a.jpg' onclick="swapImg(this,'enieslobby/25b.jpg','enieslobby/25a.jpg',1);" />
+                <img src='enieslobby/26a.jpg' onclick="swapImg(this,'enieslobby/26b.jpg','enieslobby/26a.jpg',1);" />
+                <img src='enieslobby/27a.jpg' onclick="swapImg(this,'enieslobby/27b.jpg','enieslobby/27a.jpg',1);" />
+                <img src='enieslobby/28a.jpg' onclick="swapImg(this,'enieslobby/28b.jpg','enieslobby/28a.jpg',1);" />
+                <img src='enieslobby/29a.jpg' onclick="swapImg(this,'enieslobby/29b.jpg','enieslobby/29a.jpg',1);" />
+                <img src='enieslobby/30a.jpg' onclick="swapImg(this,'enieslobby/30b.jpg','enieslobby/30a.jpg',1);" />
+                <img src='enieslobby/32a.jpg' onclick="swapImg(this,'enieslobby/32b.jpg','enieslobby/32a.jpg',1);" />
+                <img src='enieslobby/33a.jpg' onclick="swapImg(this,'enieslobby/33b.jpg','enieslobby/33a.jpg',1);" />
+                <img src='enieslobby/34a.jpg' onclick="swapImg(this,'enieslobby/34b.jpg','enieslobby/34a.jpg',1);" />
+                <img src='enieslobby/35a.jpg' onclick="swapImg(this,'enieslobby/35b.jpg','enieslobby/35a.jpg',1);" />
+                <img src='enieslobby/36a.jpg' onclick="swapImg(this,'enieslobby/36b.jpg','enieslobby/36a.jpg',1);" />
+                <img src='enieslobby/37a.jpg' onclick="swapImg(this,'enieslobby/37b.jpg','enieslobby/37a.jpg',1);" />
+                <img src='enieslobby/38a.jpg' onclick="swapImg(this,'enieslobby/38b.jpg','enieslobby/38a.jpg',1);" />
+                <img src='enieslobby/39a.jpg' onclick="swapImg(this,'enieslobby/39b.jpg','enieslobby/39a.jpg',1);" />
+                <img src='enieslobby/30a.jpg' onclick="swapImg(this,'enieslobby/30b.jpg','enieslobby/30a.jpg',1);" />
+                <img src='enieslobby/40a.jpg' onclick="swapImg(this,'enieslobby/40b.jpg','enieslobby/40a.jpg',1);" />
+                <img src='enieslobby/41a.jpg' onclick="swapImg(this,'enieslobby/41b.jpg','enieslobby/41a.jpg',1);" />
+                <img src='enieslobby/42a.jpg' onclick="swapImg(this,'enieslobby/42b.jpg','enieslobby/42a.jpg',1);" />
+                <img src='enieslobby/43a.jpg' onclick="swapImg(this,'enieslobby/43b.jpg','enieslobby/43a.jpg',1);" />
+                <img src='enieslobby/44a.jpg' onclick="swapImg(this,'enieslobby/44b.jpg','enieslobby/44a.jpg',1);" />
+                <img src='enieslobby/45a.jpg' onclick="swapImg(this,'enieslobby/45b.jpg','enieslobby/45a.jpg',1);" />
+                <img src='enieslobby/46a.jpg' onclick="swapImg(this,'enieslobby/46b.jpg','enieslobby/46a.jpg',1);" />
+                <img src='enieslobby/47a.jpg' onclick="swapImg(this,'enieslobby/47b.jpg','enieslobby/47a.jpg',1);" />
+                <img src='enieslobby/48a.jpg' onclick="swapImg(this,'enieslobby/48b.jpg','enieslobby/48a.jpg',1);" />
+                <img src='enieslobby/49a.jpg' onclick="swapImg(this,'enieslobby/49b.jpg','enieslobby/49a.jpg',1);" />
+                <img src='enieslobby/50a.jpg' onclick="swapImg(this,'enieslobby/50b.jpg','enieslobby/50a.jpg',1);" />
+                <img src='enieslobby/51a.jpg' onclick="swapImg(this,'enieslobby/51b.jpg','enieslobby/51a.jpg',1);" />
+                <img src='enieslobby/52a.jpg' onclick="swapImg(this,'enieslobby/52b.jpg','enieslobby/52a.jpg',1);" />
+                <img src='enieslobby/53a.jpg' onclick="swapImg(this,'enieslobby/53b.jpg','enieslobby/53a.jpg',1);" />
+                <img src='enieslobby/54a.jpg' onclick="swapImg(this,'enieslobby/54b.jpg','enieslobby/54a.jpg',1);" />
+                <img src='enieslobby/55a.jpg' onclick="swapImg(this,'enieslobby/55b.jpg','enieslobby/55a.jpg',1);" />
+                <img src='enieslobby/56a.jpg' onclick="swapImg(this,'enieslobby/56b.jpg','enieslobby/56a.jpg',1);" />
+                <img src='enieslobby/57a.jpg' onclick="swapImg(this,'enieslobby/57b.jpg','enieslobby/57a.jpg',1);" />
+                <img src='enieslobby/58a.jpg' onclick="swapImg(this,'enieslobby/58b.jpg','enieslobby/58a.jpg',1);" />
+                <img src='enieslobby/59a.jpg' onclick="swapImg(this,'enieslobby/59b.jpg','enieslobby/59a.jpg',1);" />
+                <img src='enieslobby/60a.jpg' onclick="swapImg(this,'enieslobby/60b.jpg','enieslobby/60a.jpg',1);" />
+                <img src='enieslobby/61a.jpg' onclick="swapImg(this,'enieslobby/61b.jpg','enieslobby/61a.jpg',1);" />
+                <img src='enieslobby/62a.jpg' onclick="swapImg(this,'enieslobby/62b.jpg','enieslobby/62a.jpg',1);" />
+                <img src='enieslobby/63a.jpg' onclick="swapImg(this,'enieslobby/63b.jpg','enieslobby/63a.jpg',1);" />
+                <img src='enieslobby/64a.jpg' onclick="swapImg(this,'enieslobby/64b.jpg','enieslobby/64a.jpg',1);" />
+                <img src='enieslobby/65a.jpg' onclick="swapImg(this,'enieslobby/65b.jpg','enieslobby/65a.jpg',1);" />
+                <img src='enieslobby/66a.jpg' onclick="swapImg(this,'enieslobby/66b.jpg','enieslobby/66a.jpg',1);" />
+                <img src='enieslobby/67a.jpg' onclick="swapImg(this,'enieslobby/67b.jpg','enieslobby/67a.jpg',1);" />
+                <img src='enieslobby/68a.jpg' onclick="swapImg(this,'enieslobby/68b.jpg','enieslobby/68a.jpg',1);" />
+                <img src='enieslobby/69a.jpg' onclick="swapImg(this,'enieslobby/69b.jpg','enieslobby/69a.jpg',1);" />
+                <img src='enieslobby/70a.jpg' onclick="swapImg(this,'enieslobby/70b.jpg','enieslobby/70a.jpg',1);" />
+               
+            </div>
+            <img src="/css/arrow_left.png" id="buttons" class="prev" alt="Previous" />
+            <img src="/css/arrow_right.png" id="buttons" class="next" alt="Next" />
+        </div>
+        <script>
+            $('.img-wrap img:gt(0)').hide();
+            $('.next').click(function () {
+                $('.img-wrap img:first-child').fadeOut().next().fadeIn().end().appendTo('.img-wrap');
+            });
+            $('.prev').click(function () {
+                $('.img-wrap img:first-child').fadeOut();
+                $('.img-wrap img:last-child').prependTo('.img-wrap').fadeOut();
+                $('.img-wrap img:first-child').fadeIn();
+            });
+        </script>
+    </section>
+    <!--     <aside id="info">
+        <p><u>Left Click</u> to see the Manga version</p>
+        <p><u>Right click</u> to change back</p>
+    </aside> -->
+</body>
+</html>
