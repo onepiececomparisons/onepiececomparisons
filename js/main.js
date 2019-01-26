@@ -17,7 +17,4 @@ function swapImg(image, manga_image, anime_image, scroll, width) {
         image.src = anime_image;
         window.scrollTo(0, 0);
     }
-    window.scrollBy(0, window.innerHeight);
-        $('#img').text(scroll);
-
 }
