@@ -19,124 +19,129 @@
     <section id="three">
         <span class="title">One Piece</span>
         <span class="title2">Punkhazard Arc</span>
+        <span id="title3">Click image to make the switch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Right arrow skips to next image</span>
         <script type="text/javascript" src="/js/jQuery.preloadImages.js"></script>
         <script type="text/javascript">
+            var count = 1;
             $(function () {
                 var imgList = [
-                    'http://i.imgur.com/6w6j1Re.png'
-                    , 'http://i.imgur.com/UjbAWPV.png'
-                    , 'http://i.imgur.com/SBQyowH.jpg'
-                    , 'http://i.imgur.com/o6liRUN.png'
-                    , 'http://i.imgur.com/o6liRUN.png'
-                    , 'http://i.imgur.com/5Ngswdp.png'
-                    , 'http://i.imgur.com/JVN9BL4.jpg'
-                    , 'http://i.imgur.com/vfUQVUf.png'
-                    , 'http://i.imgur.com/erpqpRu.png'
-                    , 'http://i.imgur.com/5D4U9I9.jpg'
-                    , 'http://i.imgur.com/45qqkKA.png'
-                    , 'http://i.imgur.com/zDTzdcP.png'
-                    , 'http://i.imgur.com/mjmp9Sr.jpg'
-                    , 'http://i.imgur.com/XkW1FOj.png'
-                    , 'http://i.imgur.com/O4u2sQD.png'
-                    , 'http://i.imgur.com/4aSfkGB.png'
-                    , 'http://i.imgur.com/rEDnr4K.png'
-                    , 'http://i.imgur.com/ufFHh1R.png'
-                    , 'http://i.imgur.com/pQ6MlMM.png'
-                    , 'http://i.imgur.com/C1EPE4H.png'
-                    , 'http://i.imgur.com/XhdtVdk.png'
-                    , 'http://i.imgur.com/JOhXpjc.jpg'
-                    , 'http://i.imgur.com/1RXwoFB.jpg'
-                    , 'http://i.imgur.com/RxUXKzg.jpg'
-                    , 'http://i.imgur.com/pb7yzZZ.png'
-                    , 'http://i.imgur.com/sgOi0k6.png'
-                    , 'http://i.imgur.com/CZu0ZiT.jpg'
-                    , 'http://i.imgur.com/WdQsUtt.png'
-                    , 'http://i.imgur.com/S7FnP0U.png'
-                    , 'http://i.imgur.com/PMS1erv.png'
-                    , 'http://i.imgur.com/CwmpWGU.png'
-                    , 'http://i.imgur.com/5aedI0v.png'
-                    , 'http://i.imgur.com/F4rBPM9.png'
-                    , 'http://i.imgur.com/nmFvgIf.png'
-                    , 'http://i.imgur.com/RP19XKz.png'
-                    , 'http://i.imgur.com/9qahuJX.png'
-                    , 'http://i.imgur.com/eK0VUqt.jpg'
-                    , 'http://i.imgur.com/9hj4d0q.jpg'
-                    , 'http://i.imgur.com/xN5etGE.jpg'
-                    , 'http://i.imgur.com/Oqv3ouY.png'
-                    , 'http://i.imgur.com/A0Dg1AS.png'
-                    , 'http://i.imgur.com/DfI8hjS.jpg'
-                    , 'http://i.imgur.com/K4nuZkw.png'
-                    , 'http://i.imgur.com/eLWml6k.png'
-                    , 'http://i.imgur.com/UrpImWj.png'
-                    , 'http://i.imgur.com/h391h6C.png'
-                    , 'http://i.imgur.com/aNO29FI.jpg'
-                    , 'http://i.imgur.com/6NAkSHp.png'
-                    , 'http://i.imgur.com/xkW67YH.png'
-                    , 'http://i.imgur.com/LwQXqRV.png'
-                    , 'http://i.imgur.com/06G1dSn.png'
-                    , 'http://i.imgur.com/AZS6qkl.png'
-                    , 'http://i.imgur.com/8E26ece.png'
-                    , 'http://i.imgur.com/hMfkFtK.png'
-                    , 'http://i.imgur.com/eVZZxHA.png'
-                    , 'http://i.imgur.com/WWRh2I8.png'
-                    , 'http://i.imgur.com/Vg9lv5y.jpg'
-                    , 'http://i.imgur.com/9SzTsmX.jpg'
-                    , 'http://i.imgur.com/5oizY9y.jpg'
-                    , 'http://i.imgur.com/RXf8Sbc.png'
-                    , 'http://i.imgur.com/7HAFoV1.png'
-                    , 'http://i.imgur.com/BLjwJKk.jpg'
-                    , 'http://i.imgur.com/r6F5TIz.png'
-                    , 'http://i.imgur.com/5TEPdIT.png'
-                    , 'http://i.imgur.com/TY6Wa3Z.png'
-                    , 'http://i.imgur.com/bGAWQOM.png'
-                    , 'http://i.imgur.com/ojoRxuD.jpg'
-                    , 'http://i.imgur.com/QhJ3jgx.png'
-                    , 'http://i.imgur.com/12Ppoqx.png'
-                    , 'http://i.imgur.com/WJJ99X8.png'
-                    , 'http://i.imgur.com/IQMWXuQ.png'
-                    , 'http://i.imgur.com/3Vk8QeI.png'
-                    , 'http://i.imgur.com/FowRHCz.png'
-                    , 'http://i.imgur.com/fEPD15h.png'
-                    , 'http://i.imgur.com/xo5WaYA.png'
-                    , 'http://i.imgur.com/y1eB0FV.png'
-                    , 'http://i.imgur.com/NuG9bwE.jpg'
-                    , 'http://i.imgur.com/bfK0bYJ.jpg'
-                    , 'http://i.imgur.com/ebgkpIf.jpg'
-                    , 'http://i.imgur.com/p2W3seu.png'
-                    , 'http://i.imgur.com/3t3fbcF.png'
-                    , 'http://i.imgur.com/K8ib4Qg.jpg'
-                    , 'http://i.imgur.com/sBlaFaX.png'
-                    , 'http://i.imgur.com/7YdxZGE.png'
-                    , 'http://i.imgur.com/WVwePCQ.png'
-                    , 'http://i.imgur.com/oSnaFb6.png'
-                    , 'http://i.imgur.com/zCk3t5i.png'
-                    , 'http://i.imgur.com/QxTc3iC.png'
-                    , 'http://i.imgur.com/kHLUW4x.png'
-                    , 'http://i.imgur.com/f8LSYVk.png'
-                    , 'http://i.imgur.com/uXTkO4L.jpg'
-                    , 'http://i.imgur.com/iSiHGS5.jpg'
-                    , 'http://i.imgur.com/jRQXkyt.jpg'
-                    , 'http://i.imgur.com/48tqGD0.png'
-                    , 'http://i.imgur.com/jYSyOD6.png'
-                    , 'http://i.imgur.com/hbATJw4.jpg'
-                    , 'http://i.imgur.com/MpJ1jID.png'
-                    , 'http://i.imgur.com/6Tcmtnj.png'
-                    , 'http://i.imgur.com/1V2NL53.png'
-                    , 'http://i.imgur.com/YPO6mWR.png'
-                    , 'http://i.imgur.com/BvXwUzr.jpg'
-                    , 'http://i.imgur.com/H59tPTs.png'
-                    , 'http://i.imgur.com/XdjYq5G.png'
-                    , 'http://i.imgur.com/NQI9IkN.png'
-                    , 'http://i.imgur.com/iMX0Rga.png'
-                    , 'http://i.imgur.com/wcDtWBK.png'
-                    , 'http://i.imgur.com/6dL6Zxn.png'
-                    , 'http://i.imgur.com/h3rbWzj.png'
-                    , 'http://i.imgur.com/y9Umy0t.png'
-                    , 'http://i.imgur.com/QzmsRAy.jpg'
+                    'punkhazard/1b.jpg',
+                    'punkhazard/2b.jpg',
+                    'punkhazard/3b.jpg',
+                    'punkhazard/4b.jpg',
+                    'punkhazard/5b.jpg',
+                    'punkhazard/6b.jpg',
+                    'punkhazard/7b.jpg',
+                    'punkhazard/8b.jpg',
+                    'punkhazard/9b.jpg',
+                    'punkhazard/10b.jpg',
+                    'punkhazard/11b.jpg',
+                    'punkhazard/12b.jpg',
+                    'punkhazard/13b.jpg',
+                    'punkhazard/14b.jpg',
+                    'punkhazard/15b.jpg',
+                    'punkhazard/16b.jpg',
+                    'punkhazard/17b.jpg',
+                    'punkhazard/18b.jpg',
+                    'punkhazard/19b.jpg',
+                    'punkhazard/20b.jpg',
+                    'punkhazard/21b.jpg',
+                    'punkhazard/22b.jpg',
+                    'punkhazard/23b.jpg',
+                    'punkhazard/24b.jpg',
+                    'punkhazard/25b.jpg',
+                    'punkhazard/26b.jpg',
+                    'punkhazard/27b.jpg',
+                    'punkhazard/28b.jpg',
+                    'punkhazard/29b.jpg',
+                    'punkhazard/30b.jpg',
+                    'punkhazard/32b.jpg',
+                    'punkhazard/33b.jpg',
+                    'punkhazard/34b.jpg',
+                    'punkhazard/35b.jpg',
+                    'punkhazard/36b.jpg',
+                    'punkhazard/37b.jpg',
+                    'punkhazard/38b.jpg',
+                    'punkhazard/39b.jpg',
+                    'punkhazard/30b.jpg',
+                    'punkhazard/40b.jpg',
+                    'punkhazard/41b.jpg',
+                    'punkhazard/42b.jpg',
+                    'punkhazard/43b.jpg',
+                    'punkhazard/44b.jpg',
+                    'punkhazard/45b.jpg',
+                    'punkhazard/46b.jpg',
+                    'punkhazard/47b.jpg',
+                    'punkhazard/48b.jpg',
+                    'punkhazard/49b.jpg',
+                    'punkhazard/50b.jpg',
+                    'punkhazard/51b.jpg',
+                    'punkhazard/52b.jpg',
+                    'punkhazard/53b.jpg',
+                    'punkhazard/54b.jpg',
+                    'punkhazard/55b.jpg',
+                    'punkhazard/56b.jpg',
+                    'punkhazard/57b.jpg',
+                    'punkhazard/58b.jpg',
+                    'punkhazard/59b.jpg',
+                    'punkhazard/60b.jpg',
+                    'punkhazard/61b.jpg',
+                    'punkhazard/62b.jpg',
+                    'punkhazard/63b.jpg',
+                    'punkhazard/64b.jpg',
+                    'punkhazard/65b.jpg',
+                    'punkhazard/66b.jpg',
+                    'punkhazard/67b.jpg',
+                    'punkhazard/68b.jpg',
+                    'punkhazard/69b.jpg',
+                    'punkhazard/70b.jpg',
+                    'punkhazard/71b.jpg',
+                    'punkhazard/72b.jpg',
+                    'punkhazard/73b.jpg',
+                    'punkhazard/74b.jpg',
+                    'punkhazard/75b.jpg',
+                    'punkhazard/76b.jpg',
+                    'punkhazard/77b.jpg',
+                    'punkhazard/78b.jpg',
+                    'punkhazard/79b.jpg',
+                    'punkhazard/80b.jpg',
+                    'punkhazard/81b.jpg',
+                    'punkhazard/82b.jpg',
+                    'punkhazard/83b.jpg',
+                    'punkhazard/84b.jpg',
+                    'punkhazard/85b.jpg',
+                    'punkhazard/86b.jpg',
+                    'punkhazard/87b.jpg',
+                    'punkhazard/88b.jpg',
+                    'punkhazard/89b.jpg',
+                    'punkhazard/90b.jpg',
+                    'punkhazard/91b.jpg',
+                    'punkhazard/92b.jpg',
+                    'punkhazard/93b.jpg',
+                    'punkhazard/94b.jpg',
+                    'punkhazard/95b.jpg',
+                    'punkhazard/96b.jpg',
+                    'punkhazard/97b.jpg',
+                    'punkhazard/98b.jpg',
+                    'punkhazard/99b.jpg',
+                    'punkhazard/100b.jpg',
+                    'punkhazard/101b.jpg',
+                    'punkhazard/102b.jpg',
+                    'punkhazard/103b.jpg',
+                    'punkhazard/104b.jpg',
+                    'punkhazard/105b.jpg',
+                    'punkhazard/106b.jpg',
+                    'punkhazard/107b.jpg',
+                    'punkhazard/108b.jpg',
+                    'punkhazard/109b.jpg',
+                    'punkhazard/110b.jpg',
+                    'punkhazard/111b.jpg',
             ];
                 var galleryHtml = '';
                 $(imgList).preloadImages(function (isSucceed, finishedCount, len, src) {
                     var per = parseInt((finishedCount / len) * 100);
+                    $('#counter').text(count + ' / ' + len);
+                    window.total = len;
                     $('#num').text(finishedCount + ' / ' + len);
                     $('#progress').css({
                         width: per + '%'
@@ -169,128 +174,147 @@
         </div>
         <div id="img-grp-wrap">
             <div class="img-wrap">
-                <img src='http://i.imgur.com/3kC8QkV.jpg' onclick="swapImg(this,'http://i.imgur.com/UjbAWPV.png','http://i.imgur.com/3kC8QkV.jpg',0);" width="30%" />
-                <img src='http://i.imgur.com/yBbrfYx.jpg' onclick="swapImg(this,'http://i.imgur.com/SBQyowH.jpg','http://i.imgur.com/yBbrfYx.jpg',1);" />
-                <img src='http://i.imgur.com/ZnvXpWV.jpg' onclick="swapImg(this,'http://i.imgur.com/o6liRUN.png','http://i.imgur.com/ZnvXpWV.jpg',1);" />
-                <img src='http://i.imgur.com/gx52wIE.jpg' onclick="swapImg(this,'http://i.imgur.com/ZFn1NPB.png','http://i.imgur.com/gx52wIE.jpg',1);" />
-                <img src='http://i.imgur.com/IlLNFE0.jpg' onclick="swapImg(this,'http://i.imgur.com/5Ngswdp.png','http://i.imgur.com/IlLNFE0.jpg',1);" />
-                <img src='http://i.imgur.com/uyhnNWh.jpg' onclick="swapImg(this,'http://i.imgur.com/JVN9BL4.jpg','http://i.imgur.com/uyhnNWh.jpg',1);" />
-                <img src='http://i.imgur.com/I7CDr8U.jpg' onclick="swapImg(this,'http://i.imgur.com/vfUQVUf.png','http://i.imgur.com/I7CDr8U.jpg',1);" />
-                <img src='http://i.imgur.com/knNw88l.jpg' onclick="swapImg(this,'http://i.imgur.com/erpqpRu.png','http://i.imgur.com/knNw88l.jpg',1);" />
-                <img src='http://i.imgur.com/NnicyIJ.jpg' onclick="swapImg(this,'http://i.imgur.com/5D4U9I9.jpg','http://i.imgur.com/NnicyIJ.jpg',0);" width="30%" />
-                <img src='http://i.imgur.com/oay3Mv4.jpg' onclick="swapImg(this,'http://i.imgur.com/45qqkKA.png','http://i.imgur.com/oay3Mv4.jpg',1);" />
-                <img src='http://i.imgur.com/aJBCNYX.jpg' onclick="swapImg(this,'http://i.imgur.com/zDTzdcP.png','http://i.imgur.com/aJBCNYX.jpg',1);" />
-                <img src='http://i.imgur.com/KoeyvLP.jpg' onclick="swapImg(this,'http://i.imgur.com/mjmp9Sr.jpg','http://i.imgur.com/KoeyvLP.jpg',1);" />
-                <img src='http://i.imgur.com/UBdghoy.jpg' onclick="swapImg(this,'http://i.imgur.com/XkW1FOj.png','http://i.imgur.com/UBdghoy.jpg',1);" />
-                <img src='http://i.imgur.com/Q23KoPK.jpg' onclick="swapImg(this,'http://i.imgur.com/O4u2sQD.png','http://i.imgur.com/Q23KoPK.jpg',0);" />
-                <img src='http://i.imgur.com/enTeWBr.jpg' onclick="swapImg(this,'http://i.imgur.com/4aSfkGB.png','http://i.imgur.com/enTeWBr.jpg',1);" />
-                <img src='http://i.imgur.com/H6OPBLn.jpg' onclick="swapImg(this,'http://i.imgur.com/rEDnr4K.png','http://i.imgur.com/H6OPBLn.jpg',1);" />
-                <img src='http://i.imgur.com/D8lHCY6.jpg' onclick="swapImg(this,'http://i.imgur.com/ufFHh1R.png','http://i.imgur.com/D8lHCY6.jpg',1);" />
-                <img src='http://i.imgur.com/GWvz44e.jpg' onclick="swapImg(this,'http://i.imgur.com/pQ6MlMM.png','http://i.imgur.com/GWvz44e.jpg',0);" width="30%" />
-                <img src='http://i.imgur.com/RVITAaT.jpg' onclick="swapImg(this,'http://i.imgur.com/C1EPE4H.png','http://i.imgur.com/RVITAaT.jpg',1);" />
-                <img src='http://i.imgur.com/Vc0HcJw.jpg' onclick="swapImg(this,'http://i.imgur.com/XhdtVdk.png','http://i.imgur.com/Vc0HcJw.jpg',1);" />
-                <img src='http://i.imgur.com/X3a3ShW.jpg' onclick="swapImg(this,'http://i.imgur.com/JOhXpjc.jpg','http://i.imgur.com/X3a3ShW.jpg',1);" />
-                <img src='http://i.imgur.com/t0Dy4FB.jpg' onclick="swapImg(this,'http://i.imgur.com/1RXwoFB.jpg','http://i.imgur.com/t0Dy4FB.jpg',1);" />
-                <img src='http://i.imgur.com/99IlKJU.jpg' onclick="swapImg(this,'http://i.imgur.com/RxUXKzg.jpg','http://i.imgur.com/99IlKJU.jpg',1);" />
-                <img src='http://i.imgur.com/qG9dDsA.jpg' onclick="swapImg(this,'http://i.imgur.com/pb7yzZZ.png','http://i.imgur.com/qG9dDsA.jpg',1);" />
-                <img src='http://i.imgur.com/CkwltIO.jpg' onclick="swapImg(this,'http://i.imgur.com/sgOi0k6.png','http://i.imgur.com/CkwltIO.jpg',1);" />
-                <img src='http://i.imgur.com/az52KJf.jpg' onclick="swapImg(this,'http://i.imgur.com/CZu0ZiT.jpg','http://i.imgur.com/az52KJf.jpg',1);" />
-                <img src='http://i.imgur.com/QLC8ACA.jpg' onclick="swapImg(this,'http://i.imgur.com/WdQsUtt.png','http://i.imgur.com/QLC8ACA.jpg',1);" />
-                <img src='http://i.imgur.com/1x6TwHU.jpg' onclick="swapImg(this,'http://i.imgur.com/S7FnP0U.png','http://i.imgur.com/1x6TwHU.jpg',0);" width="30%" />
-                <img src='http://i.imgur.com/UtcUYNE.jpg' onclick="swapImg(this,'http://i.imgur.com/PMS1erv.png','http://i.imgur.com/UtcUYNE.jpg',1);" />
-                <img src='http://i.imgur.com/G6K64IL.jpg' onclick="swapImg(this,'http://i.imgur.com/CwmpWGU.png','http://i.imgur.com/G6K64IL.jpg',0);" width="30%" />
-                <img src='http://i.imgur.com/S8IpgFE.jpg' onclick="swapImg(this,'http://i.imgur.com/5aedI0v.png','http://i.imgur.com/S8IpgFE.jpg',1);" />
-                <img src='http://i.imgur.com/4JQoTai.jpg' onclick="swapImg(this,'http://i.imgur.com/F4rBPM9.png','http://i.imgur.com/4JQoTai.jpg',1);" />
-                <img src='http://i.imgur.com/Yyn76qk.jpg' onclick="swapImg(this,'http://i.imgur.com/nmFvgIf.png','http://i.imgur.com/Yyn76qk.jpg',1);" />
-                <img src='http://i.imgur.com/kUsTdtB.jpg' onclick="swapImg(this,'http://i.imgur.com/RP19XKz.png','http://i.imgur.com/kUsTdtB.jpg',1);" />
-                <img src='http://i.imgur.com/lAntc2d.jpg' onclick="swapImg(this,'http://i.imgur.com/9qahuJX.png','http://i.imgur.com/lAntc2d.jpg',1);" />
-                <img src='http://i.imgur.com/JGGRhe8.jpg' onclick="swapImg(this,'http://i.imgur.com/eK0VUqt.jpg','http://i.imgur.com/JGGRhe8.jpg',1);" />
-                <img src='http://i.imgur.com/Pww0Itr.jpg' onclick="swapImg(this,'http://i.imgur.com/9hj4d0q.jpg','http://i.imgur.com/Pww0Itr.jpg',1);" />
-                <img src='http://i.imgur.com/X18ku0s.jpg' onclick="swapImg(this,'http://i.imgur.com/xN5etGE.jpg','http://i.imgur.com/X18ku0s.jpg',1);" />
-                <img src='http://i.imgur.com/yoY0pAu.jpg' onclick="swapImg(this,'http://i.imgur.com/Oqv3ouY.png','http://i.imgur.com/yoY0pAu.jpg',1);" />
-                <img src='http://i.imgur.com/jAZJKan.jpg' onclick="swapImg(this,'http://i.imgur.com/A0Dg1AS.png','http://i.imgur.com/jAZJKan.jpg',1);" />
-                <img src='http://i.imgur.com/DyM7EQ2.jpg' onclick="swapImg(this,'http://i.imgur.com/DfI8hjS.jpg','http://i.imgur.com/DyM7EQ2.jpg',1);" />
-                <img src='http://i.imgur.com/zSEjIVf.jpg' onclick="swapImg(this,'http://i.imgur.com/K4nuZkw.png','http://i.imgur.com/zSEjIVf.jpg',1);" />
-                <img src='http://i.imgur.com/UjTHyOe.jpg' onclick="swapImg(this,'http://i.imgur.com/eLWml6k.png','http://i.imgur.com/UjTHyOe.jpg',1);" />
-                <img src='http://i.imgur.com/CAerDht.jpg' onclick="swapImg(this,'http://i.imgur.com/UrpImWj.png','http://i.imgur.com/CAerDht.jpg',1);" />
-                <img src='http://i.imgur.com/PjHolZ1.jpg' onclick="swapImg(this,'http://i.imgur.com/h391h6C.png','http://i.imgur.com/PjHolZ1.jpg',1);" />
-                <img src='http://i.imgur.com/r7Kv2lv.jpg' onclick="swapImg(this,'http://i.imgur.com/aNO29FI.jpg','http://i.imgur.com/r7Kv2lv.jpg',1);" />
-                <img src='http://i.imgur.com/V8S0wJ5.jpg' onclick="swapImg(this,'http://i.imgur.com/6NAkSHp.png','http://i.imgur.com/V8S0wJ5.jpg',1);" />
-                <img src='http://i.imgur.com/yyVrB4R.jpg' onclick="swapImg(this,'http://i.imgur.com/xkW67YH.png','http://i.imgur.com/yyVrB4R.jpg',1);" />
-                <img src='http://i.imgur.com/MzSLdUY.jpg' onclick="swapImg(this,'http://i.imgur.com/LwQXqRV.png','http://i.imgur.com/MzSLdUY.jpg',1);" width="30%" />
-                <img src='http://i.imgur.com/vYzSdbW.jpg' onclick="swapImg(this,'http://i.imgur.com/06G1dSn.png','http://i.imgur.com/vYzSdbW.jpg',1);" />
-                <img src='http://i.imgur.com/2XOQ39y.jpg' onclick="swapImg(this,'http://i.imgur.com/AZS6qkl.png','http://i.imgur.com/2XOQ39y.jpg',1);" />
-                <img src='http://i.imgur.com/C0xnslS.jpg' onclick="swapImg(this,'http://i.imgur.com/8E26ece.png','http://i.imgur.com/C0xnslS.jpg',1);" />
-                <img src='http://i.imgur.com/Kpu1CvL.jpg' onclick="swapImg(this,'http://i.imgur.com/hMfkFtK.png','http://i.imgur.com/Kpu1CvL.jpg',1);" />
-                <img src='http://i.imgur.com/Hk5KD8T.jpg' onclick="swapImg(this,'http://i.imgur.com/eVZZxHA.png','http://i.imgur.com/Hk5KD8T.jpg',1);" />
-                <img src='http://i.imgur.com/RY08VFB.jpg' onclick="swapImg(this,'http://i.imgur.com/WWRh2I8.png','http://i.imgur.com/RY08VFB.jpg',1);" />
-                <img src='http://i.imgur.com/cWTFxu4.jpg' onclick="swapImg(this,'http://i.imgur.com/Vg9lv5y.jpg','http://i.imgur.com/cWTFxu4.jpg',1);" />
-                <img src='http://i.imgur.com/jcpWEcc.jpg' onclick="swapImg(this,'http://i.imgur.com/9SzTsmX.jpg','http://i.imgur.com/jcpWEcc.jpg',1);" />
-                <img src='http://i.imgur.com/ucUm9zx.jpg' onclick="swapImg(this,'http://i.imgur.com/5oizY9y.jpg','http://i.imgur.com/ucUm9zx.jpg',1);" />
-                <img src='http://i.imgur.com/Nl3u0NC.jpg' onclick="swapImg(this,'http://i.imgur.com/RXf8Sbc.png','http://i.imgur.com/Nl3u0NC.jpg',1);" />
-                <img src='http://i.imgur.com/uP67dLo.jpg' onclick="swapImg(this,'http://i.imgur.com/7HAFoV1.png','http://i.imgur.com/uP67dLo.jpg',1);" />
-                <img src='http://i.imgur.com/AQ49bzb.jpg' onclick="swapImg(this,'http://i.imgur.com/BLjwJKk.jpg','http://i.imgur.com/AQ49bzb.jpg',1);" />
-                <img src='http://i.imgur.com/38ejwAU.jpg' onclick="swapImg(this,'http://i.imgur.com/r6F5TIz.png','http://i.imgur.com/38ejwAU.jpg',1);" />
-                <img src='http://i.imgur.com/lIYICq2.jpg' onclick="swapImg(this,'http://i.imgur.com/5TEPdIT.png','http://i.imgur.com/lIYICq2.jpg',1);" />
-                <img src='http://i.imgur.com/Qa8QdT1.jpg' onclick="swapImg(this,'http://i.imgur.com/TY6Wa3Z.png','http://i.imgur.com/Qa8QdT1.jpg',1);" />
-                <img src='http://i.imgur.com/QiERW1J.jpg' onclick="swapImg(this,'http://i.imgur.com/bGAWQOM.png','http://i.imgur.com/QiERW1J.jpg',1);" />
-                <img src='http://i.imgur.com/TIFHJ29.jpg' onclick="swapImg(this,'http://i.imgur.com/ojoRxuD.jpg','http://i.imgur.com/TIFHJ29.jpg',1);" />
-                <img src='http://i.imgur.com/GlMovu9.jpg' onclick="swapImg(this,'http://i.imgur.com/QhJ3jgx.png','http://i.imgur.com/GlMovu9.jpg',1);" />
-                <img src='http://i.imgur.com/x9LCp3Y.jpg' onclick="swapImg(this,'http://i.imgur.com/12Ppoqx.png','http://i.imgur.com/x9LCp3Y.jpg',1);" />
-                <img src='http://i.imgur.com/n1N55XM.jpg' onclick="swapImg(this,'http://i.imgur.com/WJJ99X8.png','http://i.imgur.com/n1N55XM.jpg',1);" />
-                <img src='http://i.imgur.com/4jSZgYO.jpg' onclick="swapImg(this,'http://i.imgur.com/IQMWXuQ.png','http://i.imgur.com/4jSZgYO.jpg',1);" />
-                <img src='http://i.imgur.com/DkvOnxc.jpg' onclick="swapImg(this,'http://i.imgur.com/3Vk8QeI.png','http://i.imgur.com/DkvOnxc.jpg',1);" />
-                <img src='http://i.imgur.com/7eGaRwW.jpg' onclick="swapImg(this,'http://i.imgur.com/FowRHCz.png','http://i.imgur.com/7eGaRwW.jpg',1);" />
-                <img src='http://i.imgur.com/ElDQu14.jpg' onclick="swapImg(this,'http://i.imgur.com/fEPD15h.png','http://i.imgur.com/ElDQu14.jpg',1);" />
-                <img src='http://i.imgur.com/NxeQW9Y.jpg' onclick="swapImg(this,'http://i.imgur.com/xo5WaYA.png','http://i.imgur.com/NxeQW9Y.jpg',1);" />
-                <img src='http://i.imgur.com/jx8zz5G.jpg' onclick="swapImg(this,'http://i.imgur.com/y1eB0FV.png','http://i.imgur.com/jx8zz5G.jpg',1);" />
-                <img src='http://i.imgur.com/hTJNujO.jpg' onclick="swapImg(this,'http://i.imgur.com/NuG9bwE.jpg','http://i.imgur.com/hTJNujO.jpg',1);" />
-                <img src='http://i.imgur.com/oSEfW6H.jpg' onclick="swapImg(this,'http://i.imgur.com/bfK0bYJ.jpg','http://i.imgur.com/oSEfW6H.jpg',1);" />
-                <img src='http://i.imgur.com/DIXirqe.jpg' onclick="swapImg(this,'http://i.imgur.com/ebgkpIf.jpg','http://i.imgur.com/DIXirqe.jpg',1);" />
-                <img src='http://i.imgur.com/a6iq8Uw.jpg' onclick="swapImg(this,'http://i.imgur.com/p2W3seu.png','http://i.imgur.com/a6iq8Uw.jpg',1);" />
-                <img src='http://i.imgur.com/RbEVOHi.jpg' onclick="swapImg(this,'http://i.imgur.com/3t3fbcF.png','http://i.imgur.com/RbEVOHi.jpg',1);" />
-                <img src='http://i.imgur.com/0F2SQif.jpg' onclick="swapImg(this,'http://i.imgur.com/K8ib4Qg.jpg','http://i.imgur.com/0F2SQif.jpg',1);" />
-                <img src='http://i.imgur.com/701ZLo8.jpg' onclick="swapImg(this,'http://i.imgur.com/sBlaFaX.png','http://i.imgur.com/701ZLo8.jpg',1);" width="30%" />
-                <img src='http://i.imgur.com/4bOUinU.jpg' onclick="swapImg(this,'http://i.imgur.com/7YdxZGE.png','http://i.imgur.com/4bOUinU.jpg',1);" />
-                <img src='http://i.imgur.com/aYi2zeN.jpg' onclick="swapImg(this,'http://i.imgur.com/WVwePCQ.png','http://i.imgur.com/aYi2zeN.jpg',1);" />
-                <img src='http://i.imgur.com/S4BQpEL.jpg' onclick="swapImg(this,'http://i.imgur.com/oSnaFb6.png','http://i.imgur.com/S4BQpEL.jpg',1);" />
-                <img src='http://i.imgur.com/8BleZsd.jpg' onclick="swapImg(this,'http://i.imgur.com/zCk3t5i.png','http://i.imgur.com/8BleZsd.jpg',1);" />
-                <img src='http://i.imgur.com/7aN1zFE.jpg' onclick="swapImg(this,'http://i.imgur.com/QxTc3iC.png','http://i.imgur.com/7aN1zFE.jpg',1);" />
-                <img src='http://i.imgur.com/x1xlu34.jpg' onclick="swapImg(this,'http://i.imgur.com/kHLUW4x.png','http://i.imgur.com/x1xlu34.jpg',1);" />
-                <img src='http://i.imgur.com/lAtMWPk.jpg' onclick="swapImg(this,'http://i.imgur.com/f8LSYVk.png','http://i.imgur.com/lAtMWPk.jpg',1);" />
-                <img src='http://i.imgur.com/ItH2O3f.jpg' onclick="swapImg(this,'http://i.imgur.com/uXTkO4L.jpg','http://i.imgur.com/ItH2O3f.jpg',1);" />
-                <img src='http://i.imgur.com/C0JW3J0.jpg' onclick="swapImg(this,'http://i.imgur.com/iSiHGS5.jpg','http://i.imgur.com/C0JW3J0.jpg',1);" width="30%" />
-                <img src='http://i.imgur.com/ET1RGty.jpg' onclick="swapImg(this,'http://i.imgur.com/jRQXkyt.jpg','http://i.imgur.com/ET1RGty.jpg',1);" />
-                <img src='http://i.imgur.com/5xSPrhQ.jpg' onclick="swapImg(this,'http://i.imgur.com/48tqGD0.png','http://i.imgur.com/5xSPrhQ.jpg',1);" />
-                <img src='http://i.imgur.com/CcTu0UD.jpg' onclick="swapImg(this,'http://i.imgur.com/jYSyOD6.png','http://i.imgur.com/CcTu0UD.jpg',1);" />
-                <img src='http://i.imgur.com/T95wZcf.jpg' onclick="swapImg(this,'http://i.imgur.com/hbATJw4.jpg','http://i.imgur.com/T95wZcf.jpg',1);" />
-                <img src='http://i.imgur.com/adE7UvO.jpg' onclick="swapImg(this,'http://i.imgur.com/MpJ1jID.png','http://i.imgur.com/adE7UvO.jpg',1);" />
-                <img src='http://i.imgur.com/TL4xahi.jpg' onclick="swapImg(this,'http://i.imgur.com/6Tcmtnj.png','http://i.imgur.com/TL4xahi.jpg',1);" />
-                <img src='http://i.imgur.com/QbxCO42.jpg' onclick="swapImg(this,'http://i.imgur.com/1V2NL53.png','http://i.imgur.com/QbxCO42.jpg',1);" />
-                <img src='http://i.imgur.com/w4Riihq.jpg' onclick="swapImg(this,'http://i.imgur.com/YPO6mWR.png','http://i.imgur.com/w4Riihq.jpg',1);" />
-                <img src='http://i.imgur.com/jwT37QV.jpg' onclick="swapImg(this,'http://i.imgur.com/BvXwUzr.jpg','http://i.imgur.com/jwT37QV.jpg',1);" />
-                <img src='http://i.imgur.com/xLbGzoY.jpg' onclick="swapImg(this,'http://i.imgur.com/H59tPTs.png','http://i.imgur.com/xLbGzoY.jpg',1);" />
-                <img src='http://i.imgur.com/DHm0PY9.jpg' onclick="swapImg(this,'http://i.imgur.com/XdjYq5G.png','http://i.imgur.com/DHm0PY9.jpg',1);" />
-                <img src='http://i.imgur.com/AcbPIS0.jpg' onclick="swapImg(this,'http://i.imgur.com/NQI9IkN.png','http://i.imgur.com/AcbPIS0.jpg',1);" />
-                <img src='http://i.imgur.com/um3SV7h.jpg' onclick="swapImg(this,'http://i.imgur.com/iMX0Rga.png','http://i.imgur.com/um3SV7h.jpg',1);" />
-                <img src='http://i.imgur.com/nGsTCgY.jpg' onclick="swapImg(this,'http://i.imgur.com/wcDtWBK.png','http://i.imgur.com/nGsTCgY.jpg',1);" />
-                <img src='http://i.imgur.com/KZCfZ8q.jpg' onclick="swapImg(this,'http://i.imgur.com/6dL6Zxn.png','http://i.imgur.com/KZCfZ8q.jpg',1);" />
-                <img src='http://i.imgur.com/S7wRsWS.jpg' onclick="swapImg(this,'http://i.imgur.com/h3rbWzj.png','http://i.imgur.com/S7wRsWS.jpg',0);" width="30%" />
-                <img src='http://i.imgur.com/ZygHk2E.jpg' onclick="swapImg(this,'http://i.imgur.com/y9Umy0t.png','http://i.imgur.com/ZygHk2E.jpg',1);" />
-                <img src='http://i.imgur.com/rLMTAKh.jpg' onclick="swapImg(this,'http://i.imgur.com/QzmsRAy.jpg','http://i.imgur.com/rLMTAKh.jpg',1);" />
+                <img src='punkhazard/1a.jpg' onclick="swapImg(this,'punkhazard/1b.jpg','punkhazard/1a.jpg',0);" width="30%" />
+                <img src='punkhazard/2a.jpg' onclick="swapImg(this,'punkhazard/2b.jpg','punkhazard/2a.jpg',1);" />
+                <img src='punkhazard/3a.jpg' onclick="swapImg(this,'punkhazard/3b.jpg','punkhazard/3a.jpg',1);" />
+                <img src='punkhazard/4a.jpg' onclick="swapImg(this,'punkhazard/4b.jpg','punkhazard/4a.jpg',1);" />
+                <img src='punkhazard/5a.jpg' onclick="swapImg(this,'punkhazard/5b.jpg','punkhazard/5a.jpg',1);" />
+                <img src='punkhazard/6a.jpg' onclick="swapImg(this,'punkhazard/6b.jpg','punkhazard/6a.jpg',1);" />
+                <img src='punkhazard/7a.jpg' onclick="swapImg(this,'punkhazard/7b.jpg','punkhazard/7a.jpg',1);" />
+                <img src='punkhazard/8a.jpg' onclick="swapImg(this,'punkhazard/8b.jpg','punkhazard/8a.jpg',1);" />
+                <img src='punkhazard/9a.jpg' onclick="swapImg(this,'punkhazard/9b.jpg','punkhazard/9a.jpg',0);" width="30%" />
+                <img src='punkhazard/10a.jpg' onclick="swapImg(this,'punkhazard/10b.jpg','punkhazard/10a.jpg',1);" />
+                <img src='punkhazard/11a.jpg' onclick="swapImg(this,'punkhazard/11b.jpg','punkhazard/11a.jpg',1);" />
+                <img src='punkhazard/12a.jpg' onclick="swapImg(this,'punkhazard/12b.jpg','punkhazard/12a.jpg',1);" />
+                <img src='punkhazard/13a.jpg' onclick="swapImg(this,'punkhazard/13b.jpg','punkhazard/13a.jpg',1);" />
+                <img src='punkhazard/14a.jpg' onclick="swapImg(this,'punkhazard/14b.jpg','punkhazard/14a.jpg',0);" />
+                <img src='punkhazard/15a.jpg' onclick="swapImg(this,'punkhazard/15b.jpg','punkhazard/15a.jpg',1);" />
+                <img src='punkhazard/16a.jpg' onclick="swapImg(this,'punkhazard/16b.jpg','punkhazard/16a.jpg',1);" />
+                <img src='punkhazard/17a.jpg' onclick="swapImg(this,'punkhazard/17b.jpg','punkhazard/17a.jpg',1);" />
+                <img src='punkhazard/18a.jpg' onclick="swapImg(this,'punkhazard/18b.jpg','punkhazard/18a.jpg',0);" width="30%" />
+                <img src='punkhazard/19a.jpg' onclick="swapImg(this,'punkhazard/19b.jpg','punkhazard/19a.jpg',1);" />
+                <img src='punkhazard/20a.jpg' onclick="swapImg(this,'punkhazard/20b.jpg','punkhazard/20a.jpg',1);" />
+                <img src='punkhazard/21a.jpg' onclick="swapImg(this,'punkhazard/21b.jpg','punkhazard/21a.jpg',1);" />
+                <img src='punkhazard/22a.jpg' onclick="swapImg(this,'punkhazard/22b.jpg','punkhazard/22a.jpg',1);" />
+                <img src='punkhazard/23a.jpg' onclick="swapImg(this,'punkhazard/23b.jpg','punkhazard/23a.jpg',1);" />
+                <img src='punkhazard/24a.jpg' onclick="swapImg(this,'punkhazard/24b.jpg','punkhazard/24a.jpg',1);" />
+                <img src='punkhazard/25a.jpg' onclick="swapImg(this,'punkhazard/25b.jpg','punkhazard/25a.jpg',1);" />
+                <img src='punkhazard/26a.jpg' onclick="swapImg(this,'punkhazard/26b.jpg','punkhazard/26a.jpg',1);" />
+                <img src='punkhazard/27a.jpg' onclick="swapImg(this,'punkhazard/27b.jpg','punkhazard/27a.jpg',1);" />
+                <img src='punkhazard/28a.jpg' onclick="swapImg(this,'punkhazard/28b.jpg','punkhazard/28a.jpg',1);" />
+                <img src='punkhazard/29a.jpg' onclick="swapImg(this,'punkhazard/29b.jpg','punkhazard/29a.jpg',0);" width="30%" />
+                <img src='punkhazard/30a.jpg' onclick="swapImg(this,'punkhazard/30b.jpg','punkhazard/30a.jpg',1);" />
+                <img src='punkhazard/32a.jpg' onclick="swapImg(this,'punkhazard/32b.jpg','punkhazard/32a.jpg',0);" width="30%" />
+                <img src='punkhazard/33a.jpg' onclick="swapImg(this,'punkhazard/33b.jpg','punkhazard/33a.jpg',1);" />
+                <img src='punkhazard/34a.jpg' onclick="swapImg(this,'punkhazard/34b.jpg','punkhazard/34a.jpg',1);" />
+                <img src='punkhazard/35a.jpg' onclick="swapImg(this,'punkhazard/35b.jpg','punkhazard/35a.jpg',1);" />
+                <img src='punkhazard/36a.jpg' onclick="swapImg(this,'punkhazard/36b.jpg','punkhazard/36a.jpg',1);" />
+                <img src='punkhazard/37a.jpg' onclick="swapImg(this,'punkhazard/37b.jpg','punkhazard/37a.jpg',1);" />
+                <img src='punkhazard/38a.jpg' onclick="swapImg(this,'punkhazard/38b.jpg','punkhazard/38a.jpg',1);" />
+                <img src='punkhazard/39a.jpg' onclick="swapImg(this,'punkhazard/39b.jpg','punkhazard/39a.jpg',1);" />
+                <img src='punkhazard/30a.jpg' onclick="swapImg(this,'punkhazard/30b.jpg','punkhazard/30a.jpg',1);" />
+                <img src='punkhazard/40a.jpg' onclick="swapImg(this,'punkhazard/40b.jpg','punkhazard/40a.jpg',1);" />
+                <img src='punkhazard/41a.jpg' onclick="swapImg(this,'punkhazard/41b.jpg','punkhazard/41a.jpg',1);" />
+                <img src='punkhazard/42a.jpg' onclick="swapImg(this,'punkhazard/42b.jpg','punkhazard/42a.jpg',1);" />
+                <img src='punkhazard/43a.jpg' onclick="swapImg(this,'punkhazard/43b.jpg','punkhazard/43a.jpg',1);" />
+                <img src='punkhazard/44a.jpg' onclick="swapImg(this,'punkhazard/44b.jpg','punkhazard/44a.jpg',1);" />
+                <img src='punkhazard/45a.jpg' onclick="swapImg(this,'punkhazard/45b.jpg','punkhazard/45a.jpg',1);" />
+                <img src='punkhazard/46a.jpg' onclick="swapImg(this,'punkhazard/46b.jpg','punkhazard/46a.jpg',1);" />
+                <img src='punkhazard/47a.jpg' onclick="swapImg(this,'punkhazard/47b.jpg','punkhazard/47a.jpg',1);" />
+                <img src='punkhazard/48a.jpg' onclick="swapImg(this,'punkhazard/48b.jpg','punkhazard/48a.jpg',1);" />
+                <img src='punkhazard/49a.jpg' onclick="swapImg(this,'punkhazard/49b.jpg','punkhazard/49a.jpg',1);" />
+                <img src='punkhazard/50a.jpg' onclick="swapImg(this,'punkhazard/50b.jpg','punkhazard/50a.jpg',1);" width="30%" />
+                <img src='punkhazard/51a.jpg' onclick="swapImg(this,'punkhazard/51b.jpg','punkhazard/51a.jpg',1);" />
+                <img src='punkhazard/52a.jpg' onclick="swapImg(this,'punkhazard/52b.jpg','punkhazard/52a.jpg',1);" />
+                <img src='punkhazard/53a.jpg' onclick="swapImg(this,'punkhazard/53b.jpg','punkhazard/53a.jpg',1);" />
+                <img src='punkhazard/54a.jpg' onclick="swapImg(this,'punkhazard/54b.jpg','punkhazard/54a.jpg',1);" />
+                <img src='punkhazard/55a.jpg' onclick="swapImg(this,'punkhazard/55b.jpg','punkhazard/55a.jpg',1);" />
+                <img src='punkhazard/56a.jpg' onclick="swapImg(this,'punkhazard/56b.jpg','punkhazard/56a.jpg',1);" />
+                <img src='punkhazard/57a.jpg' onclick="swapImg(this,'punkhazard/57b.jpg','punkhazard/57a.jpg',1);" />
+                <img src='punkhazard/58a.jpg' onclick="swapImg(this,'punkhazard/58b.jpg','punkhazard/58a.jpg',1);" />
+                <img src='punkhazard/59a.jpg' onclick="swapImg(this,'punkhazard/59b.jpg','punkhazard/59a.jpg',1);" />
+                <img src='punkhazard/60a.jpg' onclick="swapImg(this,'punkhazard/60b.jpg','punkhazard/60a.jpg',1);" />
+                <img src='punkhazard/61a.jpg' onclick="swapImg(this,'punkhazard/61b.jpg','punkhazard/61a.jpg',1);" />
+                <img src='punkhazard/62a.jpg' onclick="swapImg(this,'punkhazard/62b.jpg','punkhazard/62a.jpg',1);" />
+                <img src='punkhazard/63a.jpg' onclick="swapImg(this,'punkhazard/63b.jpg','punkhazard/63a.jpg',1);" />
+                <img src='punkhazard/64a.jpg' onclick="swapImg(this,'punkhazard/64b.jpg','punkhazard/64a.jpg',1);" />
+                <img src='punkhazard/65a.jpg' onclick="swapImg(this,'punkhazard/65b.jpg','punkhazard/65a.jpg',1);" />
+                <img src='punkhazard/66a.jpg' onclick="swapImg(this,'punkhazard/66b.jpg','punkhazard/66a.jpg',1);" />
+                <img src='punkhazard/67a.jpg' onclick="swapImg(this,'punkhazard/67b.jpg','punkhazard/67a.jpg',1);" />
+                <img src='punkhazard/68a.jpg' onclick="swapImg(this,'punkhazard/68b.jpg','punkhazard/68a.jpg',1);" />
+                <img src='punkhazard/69a.jpg' onclick="swapImg(this,'punkhazard/69b.jpg','punkhazard/69a.jpg',1);" />
+                <img src='punkhazard/70a.jpg' onclick="swapImg(this,'punkhazard/70b.jpg','punkhazard/70a.jpg',1);" />
+                <img src='punkhazard/71a.jpg' onclick="swapImg(this,'punkhazard/71b.jpg','punkhazard/71a.jpg',1);" />
+                <img src='punkhazard/72a.jpg' onclick="swapImg(this,'punkhazard/72b.jpg','punkhazard/72a.jpg',1);" />
+                <img src='punkhazard/73a.jpg' onclick="swapImg(this,'punkhazard/73b.jpg','punkhazard/73a.jpg',1);" />
+                <img src='punkhazard/74a.jpg' onclick="swapImg(this,'punkhazard/74b.jpg','punkhazard/74a.jpg',1);" />
+                <img src='punkhazard/75a.jpg' onclick="swapImg(this,'punkhazard/75b.jpg','punkhazard/75a.jpg',1);" />
+                <img src='punkhazard/76a.jpg' onclick="swapImg(this,'punkhazard/76b.jpg','punkhazard/76a.jpg',1);" />
+                <img src='punkhazard/77a.jpg' onclick="swapImg(this,'punkhazard/77b.jpg','punkhazard/77a.jpg',1);" />
+                <img src='punkhazard/78a.jpg' onclick="swapImg(this,'punkhazard/78b.jpg','punkhazard/78a.jpg',1);" />
+                <img src='punkhazard/79a.jpg' onclick="swapImg(this,'punkhazard/79b.jpg','punkhazard/79a.jpg',1);" />
+                <img src='punkhazard/80a.jpg' onclick="swapImg(this,'punkhazard/80b.jpg','punkhazard/80a.jpg',1);" />
+                <img src='punkhazard/81a.jpg' onclick="swapImg(this,'punkhazard/81b.jpg','punkhazard/81a.jpg',1);" />
+                <img src='punkhazard/82a.jpg' onclick="swapImg(this,'punkhazard/82b.jpg','punkhazard/82a.jpg',1);" />
+                <img src='punkhazard/83a.jpg' onclick="swapImg(this,'punkhazard/83b.jpg','punkhazard/83a.jpg',1);" width="30%" />
+                <img src='punkhazard/84a.jpg' onclick="swapImg(this,'punkhazard/84b.jpg','punkhazard/84a.jpg',1);" />
+                <img src='punkhazard/85a.jpg' onclick="swapImg(this,'punkhazard/85b.jpg','punkhazard/85a.jpg',1);" />
+                <img src='punkhazard/86a.jpg' onclick="swapImg(this,'punkhazard/86b.jpg','punkhazard/86a.jpg',1);" />
+                <img src='punkhazard/87a.jpg' onclick="swapImg(this,'punkhazard/87b.jpg','punkhazard/87a.jpg',1);" />
+                <img src='punkhazard/88a.jpg' onclick="swapImg(this,'punkhazard/88b.jpg','punkhazard/88a.jpg',1);" />
+                <img src='punkhazard/89a.jpg' onclick="swapImg(this,'punkhazard/89b.jpg','punkhazard/89a.jpg',1);" />
+                <img src='punkhazard/90a.jpg' onclick="swapImg(this,'punkhazard/90b.jpg','punkhazard/90a.jpg',1);" />
+                <img src='punkhazard/91a.jpg' onclick="swapImg(this,'punkhazard/91b.jpg','punkhazard/91a.jpg',1);" />
+                <img src='punkhazard/92a.jpg' onclick="swapImg(this,'punkhazard/92b.jpg','punkhazard/92a.jpg',1);" width="30%" />
+                <img src='punkhazard/93a.jpg' onclick="swapImg(this,'punkhazard/93b.jpg','punkhazard/93a.jpg',1);" />
+                <img src='punkhazard/94a.jpg' onclick="swapImg(this,'punkhazard/94b.jpg','punkhazard/94a.jpg',1);" />
+                <img src='punkhazard/95a.jpg' onclick="swapImg(this,'punkhazard/95b.jpg','punkhazard/95a.jpg',1);" />
+                <img src='punkhazard/96a.jpg' onclick="swapImg(this,'punkhazard/96b.jpg','punkhazard/96a.jpg',1);" />
+                <img src='punkhazard/97a.jpg' onclick="swapImg(this,'punkhazard/97b.jpg','punkhazard/97a.jpg',1);" />
+                <img src='punkhazard/98a.jpg' onclick="swapImg(this,'punkhazard/98b.jpg','punkhazard/98a.jpg',1);" />
+                <img src='punkhazard/99a.jpg' onclick="swapImg(this,'punkhazard/99b.jpg','punkhazard/99a.jpg',1);" />
+                <img src='punkhazard/100a.jpg' onclick="swapImg(this,'punkhazard/100b.jpg','punkhazard/100a.jpg',1);" />
+                <img src='punkhazard/101a.jpg' onclick="swapImg(this,'punkhazard/101b.jpg','punkhazard/101a.jpg',1);" />
+                <img src='punkhazard/102a.jpg' onclick="swapImg(this,'punkhazard/102b.jpg','punkhazard/102a.jpg',1);" />
+                <img src='punkhazard/103a.jpg' onclick="swapImg(this,'punkhazard/103b.jpg','punkhazard/103a.jpg',1);" />
+                <img src='punkhazard/104a.jpg' onclick="swapImg(this,'punkhazard/104b.jpg','punkhazard/104a.jpg',1);" />
+                <img src='punkhazard/105a.jpg' onclick="swapImg(this,'punkhazard/105b.jpg','punkhazard/105a.jpg',1);" />
+                <img src='punkhazard/106a.jpg' onclick="swapImg(this,'punkhazard/106b.jpg','punkhazard/106a.jpg',1);" />
+                <img src='punkhazard/107a.jpg' onclick="swapImg(this,'punkhazard/107b.jpg','punkhazard/107a.jpg',1);" />
+                <img src='punkhazard/108a.jpg' onclick="swapImg(this,'punkhazard/108b.jpg','punkhazard/108a.jpg',1);" />
+                <img src='punkhazard/109a.jpg' onclick="swapImg(this,'punkhazard/109b.jpg','punkhazard/109a.jpg',0);" width="30%" />
+                <img src='punkhazard/110a.jpg' onclick="swapImg(this,'punkhazard/110b.jpg','punkhazard/110a.jpg',1);" />
+                <img src='punkhazard/111a.jpg' onclick="swapImg(this,'punkhazard/111b.jpg','punkhazard/111a.jpg',1);" />
             </div>
             <img src="/css/arrow_left.png" id="buttons" class="prev" alt="Previous" />
             <img src="/css/arrow_right.png" id="buttons" class="next" alt="Next" />
+            <div id="counter">999</div>
         </div>
         <script>
             $('.img-wrap img:gt(0)').hide();
-            $('.next').click(function () {
+            $('.next').click(function() {
                 $('.img-wrap img:first-child').fadeOut().next().fadeIn().end().appendTo('.img-wrap');
+                if (count == total){
+                    count=1;
+                    $('#counter').text(count + ' / ' + total);
+                }else{
+                count++;
+                $('#counter').text(count + ' / ' + total);
+                }
             });
-            $('.prev').click(function () {
+            $('.prev').click(function() {
                 $('.img-wrap img:first-child').fadeOut();
                 $('.img-wrap img:last-child').prependTo('.img-wrap').fadeOut();
                 $('.img-wrap img:first-child').fadeIn();
+                if (count == 1){
+                    count=total;
+                    $('#counter').text(count + ' / ' + total);
+                }else {
+                    count--;
+                    $('#counter').text(count + ' / ' + total);
+                    }
+                
+                
             });
         </script>
     </section>

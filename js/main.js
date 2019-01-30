@@ -17,4 +17,7 @@ function swapImg(image, manga_image, anime_image, scroll, width) {
         image.src = anime_image;
         window.scrollTo(0, 0);
     }
+    document.getElementById("title3").outerHTML = "";
+    document.getElementById("counter").style.display = 'block';
+
 }

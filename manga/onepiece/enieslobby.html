@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Manga Comparison</title>
@@ -9,6 +10,7 @@
     <script src="/js/jquery-1.11.3.min.js"></script>
     <script src="/js/main.js"></script>
 </head>
+
 <body>
     <header id="one">
         <nav>
@@ -19,124 +21,328 @@
     <section id="three">
         <span class="title">One Piece</span>
         <span class="title2">Enies Lobby Arc</span>
+        <span id="title3">Click image to make the switch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Right arrow skips to next image</span>
         <script type="text/javascript" src="/js/jQuery.preloadImages.js"></script>
         <script type="text/javascript">
-            $(function () {
+            var count = 1;
+            $(function() {
                 var imgList = [
-                    'http://i.imgur.com/6w6j1Re.png'
-                    , 'https://i.imgur.com/XC8E81t.jpg'
-                    , 'http://i.imgur.com/SBQyowH.jpg'
-                    , 'http://i.imgur.com/o6liRUN.png'
-                    , 'http://i.imgur.com/o6liRUN.png'
-                    , 'http://i.imgur.com/5Ngswdp.png'
-                    , 'http://i.imgur.com/JVN9BL4.jpg'
-                    , 'http://i.imgur.com/vfUQVUf.png'
-                    , 'http://i.imgur.com/erpqpRu.png'
-                    , 'http://i.imgur.com/5D4U9I9.jpg'
-                    , 'http://i.imgur.com/45qqkKA.png'
-                    , 'http://i.imgur.com/zDTzdcP.png'
-                    , 'http://i.imgur.com/mjmp9Sr.jpg'
-                    , 'http://i.imgur.com/XkW1FOj.png'
-                    , 'http://i.imgur.com/O4u2sQD.png'
-                    , 'http://i.imgur.com/4aSfkGB.png'
-                    , 'http://i.imgur.com/rEDnr4K.png'
-                    , 'http://i.imgur.com/ufFHh1R.png'
-                    , 'http://i.imgur.com/pQ6MlMM.png'
-                    , 'http://i.imgur.com/C1EPE4H.png'
-                    , 'http://i.imgur.com/XhdtVdk.png'
-                    , 'http://i.imgur.com/JOhXpjc.jpg'
-                    , 'http://i.imgur.com/1RXwoFB.jpg'
-                    , 'http://i.imgur.com/RxUXKzg.jpg'
-                    , 'http://i.imgur.com/pb7yzZZ.png'
-                    , 'http://i.imgur.com/sgOi0k6.png'
-                    , 'http://i.imgur.com/CZu0ZiT.jpg'
-                    , 'http://i.imgur.com/WdQsUtt.png'
-                    , 'http://i.imgur.com/S7FnP0U.png'
-                    , 'http://i.imgur.com/PMS1erv.png'
-                    , 'http://i.imgur.com/CwmpWGU.png'
-                    , 'http://i.imgur.com/5aedI0v.png'
-                    , 'http://i.imgur.com/F4rBPM9.png'
-                    , 'http://i.imgur.com/nmFvgIf.png'
-                    , 'http://i.imgur.com/RP19XKz.png'
-                    , 'http://i.imgur.com/9qahuJX.png'
-                    , 'http://i.imgur.com/eK0VUqt.jpg'
-                    , 'http://i.imgur.com/9hj4d0q.jpg'
-                    , 'http://i.imgur.com/xN5etGE.jpg'
-                    , 'http://i.imgur.com/Oqv3ouY.png'
-                    , 'http://i.imgur.com/A0Dg1AS.png'
-                    , 'http://i.imgur.com/DfI8hjS.jpg'
-                    , 'http://i.imgur.com/K4nuZkw.png'
-                    , 'http://i.imgur.com/eLWml6k.png'
-                    , 'http://i.imgur.com/UrpImWj.png'
-                    , 'http://i.imgur.com/h391h6C.png'
-                    , 'http://i.imgur.com/aNO29FI.jpg'
-                    , 'http://i.imgur.com/6NAkSHp.png'
-                    , 'http://i.imgur.com/xkW67YH.png'
-                    , 'http://i.imgur.com/LwQXqRV.png'
-                    , 'http://i.imgur.com/06G1dSn.png'
-                    , 'http://i.imgur.com/AZS6qkl.png'
-                    , 'http://i.imgur.com/8E26ece.png'
-                    , 'http://i.imgur.com/hMfkFtK.png'
-                    , 'http://i.imgur.com/eVZZxHA.png'
-                    , 'http://i.imgur.com/WWRh2I8.png'
-                    , 'http://i.imgur.com/Vg9lv5y.jpg'
-                    , 'http://i.imgur.com/9SzTsmX.jpg'
-                    , 'http://i.imgur.com/5oizY9y.jpg'
-                    , 'http://i.imgur.com/RXf8Sbc.png'
-                    , 'http://i.imgur.com/7HAFoV1.png'
-                    , 'http://i.imgur.com/BLjwJKk.jpg'
-                    , 'http://i.imgur.com/r6F5TIz.png'
-                    , 'http://i.imgur.com/5TEPdIT.png'
-                    , 'http://i.imgur.com/TY6Wa3Z.png'
-                    , 'http://i.imgur.com/bGAWQOM.png'
-                    , 'http://i.imgur.com/ojoRxuD.jpg'
-                    , 'http://i.imgur.com/QhJ3jgx.png'
-                    , 'http://i.imgur.com/12Ppoqx.png'
-                    , 'http://i.imgur.com/WJJ99X8.png'
-                    , 'http://i.imgur.com/IQMWXuQ.png'
-                    , 'http://i.imgur.com/3Vk8QeI.png'
-                    , 'http://i.imgur.com/FowRHCz.png'
-                    , 'http://i.imgur.com/fEPD15h.png'
-                    , 'http://i.imgur.com/xo5WaYA.png'
-                    , 'http://i.imgur.com/y1eB0FV.png'
-                    , 'http://i.imgur.com/NuG9bwE.jpg'
-                    , 'http://i.imgur.com/bfK0bYJ.jpg'
-                    , 'http://i.imgur.com/ebgkpIf.jpg'
-                    , 'http://i.imgur.com/p2W3seu.png'
-                    , 'http://i.imgur.com/3t3fbcF.png'
-                    , 'http://i.imgur.com/K8ib4Qg.jpg'
-                    , 'http://i.imgur.com/sBlaFaX.png'
-                    , 'http://i.imgur.com/7YdxZGE.png'
-                    , 'http://i.imgur.com/WVwePCQ.png'
-                    , 'http://i.imgur.com/oSnaFb6.png'
-                    , 'http://i.imgur.com/zCk3t5i.png'
-                    , 'http://i.imgur.com/QxTc3iC.png'
-                    , 'http://i.imgur.com/kHLUW4x.png'
-                    , 'http://i.imgur.com/f8LSYVk.png'
-                    , 'http://i.imgur.com/uXTkO4L.jpg'
-                    , 'http://i.imgur.com/iSiHGS5.jpg'
-                    , 'http://i.imgur.com/jRQXkyt.jpg'
-                    , 'http://i.imgur.com/48tqGD0.png'
-                    , 'http://i.imgur.com/jYSyOD6.png'
-                    , 'http://i.imgur.com/hbATJw4.jpg'
-                    , 'http://i.imgur.com/MpJ1jID.png'
-                    , 'http://i.imgur.com/6Tcmtnj.png'
-                    , 'http://i.imgur.com/1V2NL53.png'
-                    , 'http://i.imgur.com/YPO6mWR.png'
-                    , 'http://i.imgur.com/BvXwUzr.jpg'
-                    , 'http://i.imgur.com/H59tPTs.png'
-                    , 'http://i.imgur.com/XdjYq5G.png'
-                    , 'http://i.imgur.com/NQI9IkN.png'
-                    , 'http://i.imgur.com/iMX0Rga.png'
-                    , 'http://i.imgur.com/wcDtWBK.png'
-                    , 'http://i.imgur.com/6dL6Zxn.png'
-                    , 'http://i.imgur.com/h3rbWzj.png'
-                    , 'http://i.imgur.com/y9Umy0t.png'
-                    , 'http://i.imgur.com/QzmsRAy.jpg'
-            ];
+                    'enieslobby/1b.jpg',
+                    'enieslobby/2b.jpg',
+                    'enieslobby/3b.jpg',
+                    'enieslobby/4b.jpg',
+                    'enieslobby/5b.jpg',
+                    'enieslobby/6b.jpg',
+                    'enieslobby/7b.jpg',
+                    'enieslobby/8b.jpg',
+                    'enieslobby/9b.jpg',
+                    'enieslobby/10b.jpg',
+                    'enieslobby/11b.jpg',
+                    'enieslobby/12b.jpg',
+                    'enieslobby/13b.jpg',
+                    'enieslobby/14b.jpg',
+                    'enieslobby/15b.jpg',
+                    'enieslobby/16b.jpg',
+                    'enieslobby/17b.jpg',
+                    'enieslobby/18b.jpg',
+                    'enieslobby/19b.jpg',
+                    'enieslobby/20b.jpg',
+                    'enieslobby/21b.jpg',
+                    'enieslobby/22b.jpg',
+                    'enieslobby/23b.jpg',
+                    'enieslobby/24b.jpg',
+                    'enieslobby/25b.jpg',
+                    'enieslobby/26b.jpg',
+                    'enieslobby/27b.jpg',
+                    'enieslobby/28b.jpg',
+                    'enieslobby/29b.jpg',
+                    'enieslobby/30b.jpg',
+                    'enieslobby/32b.jpg',
+                    'enieslobby/33b.jpg',
+                    'enieslobby/34b.jpg',
+                    'enieslobby/35b.jpg',
+                    'enieslobby/36b.jpg',
+                    'enieslobby/37b.jpg',
+                    'enieslobby/38b.jpg',
+                    'enieslobby/39b.jpg',
+                    'enieslobby/30b.jpg',
+                    'enieslobby/40b.jpg',
+                    'enieslobby/41b.jpg',
+                    'enieslobby/42b.jpg',
+                    'enieslobby/43b.jpg',
+                    'enieslobby/44b.jpg',
+                    'enieslobby/45b.jpg',
+                    'enieslobby/46b.jpg',
+                    'enieslobby/47b.jpg',
+                    'enieslobby/48b.jpg',
+                    'enieslobby/49b.jpg',
+                    'enieslobby/50b.jpg',
+                    'enieslobby/51b.jpg',
+                    'enieslobby/52b.jpg',
+                    'enieslobby/53b.jpg',
+                    'enieslobby/54b.jpg',
+                    'enieslobby/55b.jpg',
+                    'enieslobby/56b.jpg',
+                    'enieslobby/57b.jpg',
+                    'enieslobby/58b.jpg',
+                    'enieslobby/59b.jpg',
+                    'enieslobby/60b.jpg',
+                    'enieslobby/61b.jpg',
+                    'enieslobby/62b.jpg',
+                    'enieslobby/63b.jpg',
+                    'enieslobby/64b.jpg',
+                    'enieslobby/65b.jpg',
+                    'enieslobby/66b.jpg',
+                    'enieslobby/67b.jpg',
+                    'enieslobby/68b.jpg',
+                    'enieslobby/69b.jpg',
+                    'enieslobby/70b.jpg',
+                    'enieslobby/71b.jpg',
+                    'enieslobby/72b.jpg',
+                    'enieslobby/73b.jpg',
+                    'enieslobby/75b.jpg',
+                    'enieslobby/76b.jpg',
+                    'enieslobby/77b.jpg',
+                    'enieslobby/78b.jpg',
+                    'enieslobby/79b.jpg',
+                    'enieslobby/80b.jpg',
+                    'enieslobby/82b.jpg',
+                    'enieslobby/83b.jpg',
+                    'enieslobby/84b.jpg',
+                    'enieslobby/85b.jpg',
+                    'enieslobby/86b.jpg',
+                    'enieslobby/87b.jpg',
+                    'enieslobby/88b.jpg',
+                    'enieslobby/89b.jpg',
+                    'enieslobby/90b.jpg',
+                    'enieslobby/91b.jpg',
+                    'enieslobby/92b.jpg',
+                    'enieslobby/93b.jpg',
+                    'enieslobby/94b.jpg',
+                    'enieslobby/95b.jpg',
+                    'enieslobby/96b.jpg',
+                    'enieslobby/97b.jpg',
+                    'enieslobby/98b.jpg',
+                    'enieslobby/99b.jpg',
+                    'enieslobby/99b.png',
+                    'enieslobby/100b.jpg',
+                    'enieslobby/101b.jpg',
+                    'enieslobby/102b.jpg',
+                    'enieslobby/103b.jpg',
+                    'enieslobby/104b.jpg',
+                    'enieslobby/105b.jpg',
+                    'enieslobby/106b.jpg',
+                    'enieslobby/107b.jpg',
+                    'enieslobby/108b.jpg',
+                    'enieslobby/109b.jpg',
+                    'enieslobby/110b.jpg',
+                    'enieslobby/111b.jpg',
+                    'enieslobby/112b.jpg',
+                    'enieslobby/113b.jpg',
+                    'enieslobby/114b.jpg',
+                    'enieslobby/115b.jpg',
+                    'enieslobby/116b.jpg',
+                    'enieslobby/117b.jpg',
+                    'enieslobby/118b.jpg',
+                    'enieslobby/119b.jpg',
+                    'enieslobby/120b.jpg',
+                    'enieslobby/121b.jpg',
+                    'enieslobby/122b.jpg',
+                    'enieslobby/123b.jpg',
+                    'enieslobby/124b.jpg',
+                    'enieslobby/125b.jpg',
+                    'enieslobby/126b.jpg',
+                    'enieslobby/127b.jpg',
+                    'enieslobby/128b.jpg',
+                    'enieslobby/129b.jpg',
+                    'enieslobby/130b.jpg',
+                    'enieslobby/131b.jpg',
+                    'enieslobby/132b.jpg',
+                    'enieslobby/133b.jpg',
+                    'enieslobby/134b.jpg',
+                    'enieslobby/135b.jpg',
+                    'enieslobby/136b.jpg',
+                    'enieslobby/137b.jpg',
+                    'enieslobby/138b.jpg',
+                    'enieslobby/139b.jpg',
+                    'enieslobby/140b.jpg',
+                    'enieslobby/141b.jpg',
+                    'enieslobby/142b.jpg',
+                    'enieslobby/143b.jpg',
+                    'enieslobby/144b.jpg',
+                    'enieslobby/145b.jpg',
+                    'enieslobby/146b.jpg',
+                    'enieslobby/147b.jpg',
+                    'enieslobby/148b.jpg',
+                    'enieslobby/149b.jpg',
+                    'enieslobby/150b.jpg',
+                    'enieslobby/151b.jpg',
+                    'enieslobby/152b.jpg',
+                    'enieslobby/153b.jpg',
+                    'enieslobby/154b.jpg',
+                    'enieslobby/155b.jpg',
+                    'enieslobby/156b.jpg',
+                    'enieslobby/157b.jpg',
+                    'enieslobby/158b.jpg',
+                    'enieslobby/159b.jpg',
+                    'enieslobby/160b.jpg',
+                    'enieslobby/161b.jpg',
+                    'enieslobby/162b.jpg',
+                    'enieslobby/163b.jpg',
+                    'enieslobby/164b.jpg',
+                    'enieslobby/165b.jpg',
+                    'enieslobby/166b.jpg',
+                    'enieslobby/167b.jpg',
+                    'enieslobby/168b.jpg',
+                    'enieslobby/169b.jpg',
+                    'enieslobby/170b.jpg',
+                    'enieslobby/171b.jpg',
+                    'enieslobby/172b.jpg',
+                    'enieslobby/173b.jpg',
+                    'enieslobby/174b.jpg',
+                    'enieslobby/175b.jpg',
+                    'enieslobby/176b.jpg',
+                    'enieslobby/177b.jpg',
+                    'enieslobby/178b.jpg',
+                    'enieslobby/179b.jpg',
+                    'enieslobby/180b.jpg',
+                    'enieslobby/181b.jpg',
+                    'enieslobby/182b.jpg',
+                    'enieslobby/183b.jpg',
+                    'enieslobby/184b.jpg',
+                    'enieslobby/185b.jpg',
+                    'enieslobby/186b.jpg',
+                    'enieslobby/187b.jpg',
+                    'enieslobby/188b.jpg',
+                    'enieslobby/189b.jpg',
+                    'enieslobby/190b.jpg',
+                    'enieslobby/191b.jpg',
+                    'enieslobby/192b.jpg',
+                    'enieslobby/193b.jpg',
+                    'enieslobby/194b.jpg',
+                    'enieslobby/195b.jpg',
+                    'enieslobby/196b.jpg',
+                    'enieslobby/197b.jpg',
+                    'enieslobby/198b.jpg',
+                    'enieslobby/199b.jpg',
+                    'enieslobby/200b.jpg',
+                    'enieslobby/201b.jpg',
+                    'enieslobby/202b.jpg',
+                    'enieslobby/203b.jpg',
+                    'enieslobby/204b.jpg',
+                    'enieslobby/205b.jpg',
+                    'enieslobby/206b.jpg',
+                    'enieslobby/207b.jpg',
+                    'enieslobby/208b.jpg',
+                    'enieslobby/209b.jpg',
+                    'enieslobby/210b.jpg',
+                    'enieslobby/211b.jpg',
+                    'enieslobby/212b.jpg',
+                    'enieslobby/213b.jpg',
+                    'enieslobby/214b.jpg',
+                    'enieslobby/215b.jpg',
+                    'enieslobby/216b.jpg',
+                    'enieslobby/217b.jpg',
+                    'enieslobby/218b.jpg',
+                    'enieslobby/219b.jpg',
+                    'enieslobby/220b.jpg',
+                    'enieslobby/221b.jpg',
+                    'enieslobby/222b.jpg',
+                    'enieslobby/223b.jpg',
+                    'enieslobby/224b.jpg',
+                    'enieslobby/225b.jpg',
+                    'enieslobby/226b.jpg',
+                    'enieslobby/227b.jpg',
+                    'enieslobby/228b.jpg',
+                    'enieslobby/229b.jpg',
+                    'enieslobby/230b.jpg',
+                    'enieslobby/231b.jpg',
+                    'enieslobby/232b.jpg',
+                    'enieslobby/233b.jpg',
+                    'enieslobby/234b.jpg',
+                    'enieslobby/235b.jpg',
+                    'enieslobby/236b.jpg',
+                    'enieslobby/237b.jpg',
+                    'enieslobby/238b.jpg',
+                    'enieslobby/239b.jpg',
+                    'enieslobby/241b.jpg',
+                    'enieslobby/242b.jpg',
+                    'enieslobby/243b.jpg',
+                    'enieslobby/244b.jpg',
+                    'enieslobby/245b.jpg',
+                    'enieslobby/246b.jpg',
+                    'enieslobby/247b.jpg',
+                    'enieslobby/248b.jpg',
+                    'enieslobby/249b.jpg',
+                    'enieslobby/250b.jpg',
+                    'enieslobby/251b.jpg',
+                    'enieslobby/252b.jpg',
+                    'enieslobby/253b.jpg',
+                    'enieslobby/254b.jpg',
+                    'enieslobby/255b.jpg',
+                    'enieslobby/256b.jpg',
+                    'enieslobby/257b.jpg',
+                    'enieslobby/257bb.jpg',
+                    'enieslobby/258b.jpg',
+                    'enieslobby/259b.jpg',
+                    'enieslobby/260b.jpg',
+                    'enieslobby/261b.jpg',
+                    'enieslobby/262b.jpg',
+                    'enieslobby/263b.jpg',
+                    'enieslobby/264b.jpg',
+                    'enieslobby/265b.jpg',
+                    'enieslobby/266b.jpg',
+                    'enieslobby/267b.jpg',
+                    'enieslobby/268b.jpg',
+                    'enieslobby/269b.jpg',
+                    'enieslobby/270b.jpg',
+                    'enieslobby/271b.jpg',
+                    'enieslobby/272b.jpg',
+                    'enieslobby/272bb.jpg',
+                    'enieslobby/273b.jpg',
+                    'enieslobby/274b.jpg',
+                    'enieslobby/274bb.jpg',
+                    'enieslobby/275b.jpg',
+                    'enieslobby/276b.jpg',
+                    'enieslobby/277b.jpg',
+                    'enieslobby/278b.jpg',
+                    'enieslobby/279b.jpg',
+                    'enieslobby/280b.jpg',
+                    'enieslobby/281b.jpg',
+                    'enieslobby/282b.jpg',
+                    'enieslobby/283b.jpg',
+                    'enieslobby/284b.jpg',
+                    'enieslobby/285b.jpg',
+                    'enieslobby/286b.jpg',
+                    'enieslobby/287b.jpg',
+                    'enieslobby/288b.jpg',
+                    'enieslobby/289b.jpg',
+                    'enieslobby/290b.jpg',
+                    'enieslobby/291b.jpg',
+                    'enieslobby/292b.jpg',
+                    'enieslobby/293b.jpg',
+                    'enieslobby/294b.jpg',
+                    'enieslobby/295b.jpg',
+                    'enieslobby/296b.jpg',
+                    'enieslobby/297b.jpg',
+                    'enieslobby/298b.jpg',
+                    'enieslobby/299b.jpg',
+                    'enieslobby/300b.jpg',
+                    'enieslobby/301b.jpg',
+                    'enieslobby/302b.jpg',
+                    'enieslobby/303b.jpg',
+                    'enieslobby/304b.jpg',
+                    'enieslobby/305b.jpg',
+                    'enieslobby/306b.jpg',
+                    'enieslobby/307b.jpg',
+                    'enieslobby/308b.jpg',
+                    'enieslobby/309b.jpg'
+                ];
                 var galleryHtml = '';
-                $(imgList).preloadImages(function (isSucceed, finishedCount, len, src) {
+                $(imgList).preloadImages(function(isSucceed, finishedCount, len, src) {
                     var per = parseInt((finishedCount / len) * 100);
+                    $('#counter').text(count + ' / ' + len);
+                    window.total = len;
                     $('#num').text(finishedCount + ' / ' + len);
                     $('#progress').css({
                         width: per + '%'
@@ -144,17 +350,17 @@
                     if (isSucceed) {
                         galleryHtml += '<li><a target="_blank" href="' + src + '"><img src="' + src + '" alt=""/></a></li>';
                     }
-                }, function (succeedCount, len) {
+                }, function(succeedCount, len) {
                     $('#gallery').html(galleryHtml);
                     $('#summary').text('Total: ' + len + ' Succeed: ' + succeedCount).show();
-                    setTimeout(function () {
-                        $('#loading_area').fadeTo(500, 0, function () {
+                    setTimeout(function() {
+                        $('#loading_area').fadeTo(500, 0, function() {
                             $('#loading_area').css("visibility", "hidden");
                         });
-                        $('.title').fadeTo(500, 1, function () {
+                        $('.title').fadeTo(500, 1, function() {
                             $('.title').css("opacity", "0.9");
                         });
-                        $('.title2').fadeTo(500, 1, function () {
+                        $('.title2').fadeTo(500, 1, function() {
                             $('.title2').css("opacity", "0.8");
                         });
                     }, 2000)
@@ -167,137 +373,355 @@
             <div id="num"></div>
             <span>Switching images might misbehave while preloading</span>
         </div>
-                <div id="img"></div>
         <div id="img-grp-wrap">
             <div class="img-wrap">
-                <img src='https://i.imgur.com/3ySUoE5.png' onclick="swapImg(this,'https://i.imgur.com/BItm60u.png','https://i.imgur.com/3ySUoE5.jpg',1);" />
-                <img src='https://i.imgur.com/zLZyZvt.png' onclick="swapImg(this,'https://i.imgur.com/BFxoJbt.png','https://i.imgur.com/zLZyZvt.jpg',1);" />
-                <img src='https://i.imgur.com/U9QdzP9.png' onclick="swapImg(this,'https://i.imgur.com/pMTOcah.png','https://i.imgur.com/U9QdzP9.jpg',1);" />
-                <img src='https://i.imgur.com/2FVqLRI.png' onclick="swapImg(this,'https://i.imgur.com/TEqnfGN.png','https://i.imgur.com/2FVqLRI.jpg',1);" />
-                <img src='https://i.imgur.com/xYbnG9Y.png' onclick="swapImg(this,'https://i.imgur.com/MLb7ns7.png','https://i.imgur.com/xYbnG9Y.jpg',1);" />
-                <img src='https://i.imgur.com/VYJ01Yz.png' onclick="swapImg(this,'https://i.imgur.com/p0L5VXL.jpg','https://i.imgur.com/VYJ01Yz.jpg',1);" />
-                <img src='https://i.imgur.com/wYvqJLs.png' onclick="swapImg(this,'https://i.imgur.com/SchK3wb.png','https://i.imgur.com/wYvqJLs.jpg',1);" />
-                <img src='https://i.imgur.com/O3r0Eci.png' onclick="swapImg(this,'https://i.imgur.com/nEkHSX7.png','https://i.imgur.com/O3r0Eci.jpg',1);" />
-                <img src='https://i.imgur.com/3Tk6Bum.png' onclick="swapImg(this,'https://i.imgur.com/Km1CK8n.jpg','https://i.imgur.com/3Tk6Bum.jpg',0);" />
-                <img src='https://i.imgur.com/GhIXA0I.png' onclick="swapImg(this,'https://i.imgur.com/CNlEtky.png','https://i.imgur.com/GhIXA0I.jpg',1);" />
-                <img src='https://i.imgur.com/fVgz3A0.png' onclick="swapImg(this,'https://i.imgur.com/E6O2x8i.png','https://i.imgur.com/fVgz3A0.jpg',1);" />
-                <img src='https://i.imgur.com/kVNE4in.png' onclick="swapImg(this,'https://i.imgur.com/nPlA0GL.jpg','https://i.imgur.com/kVNE4in.jpg',1);" />
-                <img src='https://i.imgur.com/0ZbkOCg.png' onclick="swapImg(this,'https://i.imgur.com/SP1XFcD.png','https://i.imgur.com/0ZbkOCg.jpg',1);" />
-                <img src='https://i.imgur.com/RTchKyU.png' onclick="swapImg(this,'https://i.imgur.com/04ujBDH.png','https://i.imgur.com/RTchKyU.jpg',0);" />
-                <img src='https://i.imgur.com/y8PfFFe.png' onclick="swapImg(this,'https://i.imgur.com/XSGUzpp.png','https://i.imgur.com/y8PfFFe.jpg',1);" />
-                <img src='https://i.imgur.com/EduMtXr.png' onclick="swapImg(this,'https://i.imgur.com/K5MOw1M.png','https://i.imgur.com/EduMtXr.jpg',1);" />
-                <img src='https://i.imgur.com/3F70acO.png' onclick="swapImg(this,'https://i.imgur.com/rJoKMJQ.png','https://i.imgur.com/3F70acO.jpg',1);" />
-                <img src='https://i.imgur.com/U4y6d0B.png' onclick="swapImg(this,'https://i.imgur.com/21bNR4j.png','https://i.imgur.com/U4y6d0B.jpg',0);" />
-                <img src='https://i.imgur.com/bgD2gOp.png' onclick="swapImg(this,'https://i.imgur.com/gEm8vvv.png','https://i.imgur.com/bgD2gOp.jpg',1);" />
-                <img src='https://i.imgur.com/6uemeq1.png' onclick="swapImg(this,'https://i.imgur.com/e0gJ138.png','https://i.imgur.com/6uemeq1.jpg',1);" />
-                <img src='https://i.imgur.com/qd31Qeu.png' onclick="swapImg(this,'https://i.imgur.com/XUOnwSW.jpg','https://i.imgur.com/qd31Qeu.jpg',1);" />
-                <img src='https://i.imgur.com/twSQv0i.png' onclick="swapImg(this,'https://i.imgur.com/h2yAip4.jpg','https://i.imgur.com/twSQv0i.jpg',1);" />
-                <img src='https://i.imgur.com/10qumRU.png' onclick="swapImg(this,'https://i.imgur.com/3fSgg8l.jpg','https://i.imgur.com/10qumRU.jpg',1);" />
-                <img src='https://i.imgur.com/BbKkULm.png' onclick="swapImg(this,'https://i.imgur.com/fvBdkTU.png','https://i.imgur.com/BbKkULm.jpg',1);" />
-                <img src='https://i.imgur.com/Gmh5TVC.png' onclick="swapImg(this,'https://i.imgur.com/1J8iQ1X.png','https://i.imgur.com/Gmh5TVC.jpg',1);" />
-                <img src='https://i.imgur.com/enA5lL1.png' onclick="swapImg(this,'https://i.imgur.com/x9Em1bT.jpg','https://i.imgur.com/enA5lL1.jpg',1);" />
-                <img src='https://i.imgur.com/Q9JKsqC.png' onclick="swapImg(this,'https://i.imgur.com/b5AhDXs.png','https://i.imgur.com/Q9JKsqC.jpg',1);" />
-                <img src='https://i.imgur.com/Jm3xIX5.png' onclick="swapImg(this,'https://i.imgur.com/hyHu81n.png','https://i.imgur.com/Jm3xIX5.jpg',0);" />
-                <img src='https://i.imgur.com/QQ02EST.png' onclick="swapImg(this,'https://i.imgur.com/OpDnqZP.png','https://i.imgur.com/QQ02EST.jpg',1);" />
-                <img src='https://i.imgur.com/08id4Or.png' onclick="swapImg(this,'https://i.imgur.com/zPd6ueN.png','https://i.imgur.com/08id4Or.jpg',0);" />
-                <img src='https://i.imgur.com/0ID3Ouv.png' onclick="swapImg(this,'https://i.imgur.com/FbwnlOa.png','https://i.imgur.com/0ID3Ouv.jpg',1);" />
-                <img src='https://i.imgur.com/tJ2bagM.png' onclick="swapImg(this,'https://i.imgur.com/vAxl3C7.png','https://i.imgur.com/tJ2bagM.jpg',1);" />
-                <img src='https://i.imgur.com/wsSr14f.png' onclick="swapImg(this,'https://i.imgur.com/2hGPZHN.png','https://i.imgur.com/wsSr14f.jpg',1);" />
-                <img src='https://i.imgur.com/Zt4fC7e.png' onclick="swapImg(this,'https://i.imgur.com/aMZWTac.png','https://i.imgur.com/Zt4fC7e.jpg',1);" />
-                <img src='https://i.imgur.com/6aIOsIS.png' onclick="swapImg(this,'https://i.imgur.com/vJbbhyF.png','https://i.imgur.com/6aIOsIS.jpg',1);" />
-                <img src='https://i.imgur.com/PExhnG5.png' onclick="swapImg(this,'https://i.imgur.com/qoXJriV.jpg','https://i.imgur.com/PExhnG5.jpg',1);" />
-                <img src='https://i.imgur.com/0Qta0I5.png' onclick="swapImg(this,'https://i.imgur.com/UIEvBmx.jpg','https://i.imgur.com/0Qta0I5.jpg',1);" />
-                <img src='https://i.imgur.com/yyiKGhi.png' onclick="swapImg(this,'https://i.imgur.com/ayEXEPc.jpg','https://i.imgur.com/yyiKGhi.jpg',1);" />
-                <img src='https://i.imgur.com/boAEvNv.png' onclick="swapImg(this,'https://i.imgur.com/qIjJNf1.png','https://i.imgur.com/boAEvNv.jpg',1);" />
-                <img src='https://i.imgur.com/sE5bzJT.png' onclick="swapImg(this,'https://i.imgur.com/WytfAkl.png','https://i.imgur.com/sE5bzJT.jpg',1);" />
-                <img src='https://i.imgur.com/UFyUFdn.png' onclick="swapImg(this,'https://i.imgur.com/6ZpRbNk.jpg','https://i.imgur.com/UFyUFdn.jpg',1);" />
-                <img src='https://i.imgur.com/bDsx0k0.png' onclick="swapImg(this,'https://i.imgur.com/K09yEa7.png','https://i.imgur.com/bDsx0k0.jpg',1);" />
-                <img src='https://i.imgur.com/pDgHxpr.png' onclick="swapImg(this,'https://i.imgur.com/3c3Tpse.png','https://i.imgur.com/pDgHxpr.jpg',1);" />
-                <img src='https://i.imgur.com/TO1r0yj.png' onclick="swapImg(this,'https://i.imgur.com/GmC17vJ.png','https://i.imgur.com/TO1r0yj.jpg',1);" />
-                <img src='https://i.imgur.com/bCpd89s.png' onclick="swapImg(this,'https://i.imgur.com/wZhwOR9.png','https://i.imgur.com/bCpd89s.jpg',1);" />
-                <img src='https://i.imgur.com/UJlWgSw.png' onclick="swapImg(this,'https://i.imgur.com/CHzNrYv.jpg','https://i.imgur.com/UJlWgSw.jpg',1);" />
-                <img src='https://i.imgur.com/0ifvQTT.png' onclick="swapImg(this,'https://i.imgur.com/tls0oDg.png','https://i.imgur.com/0ifvQTT.jpg',1);" />
-                <img src='https://i.imgur.com/fyHVcny.png' onclick="swapImg(this,'https://i.imgur.com/xmmQOYC.png','https://i.imgur.com/fyHVcny.jpg',1);" />
-                <img src='https://i.imgur.com/kzyOhbK.png' onclick="swapImg(this,'https://i.imgur.com/2fO5Van.png','https://i.imgur.com/kzyOhbK.jpg',1);" />
-                <img src='https://i.imgur.com/qrtd9WH.png' onclick="swapImg(this,'https://i.imgur.com/XV58qi6.png','https://i.imgur.com/qrtd9WH.jpg',1);" />
-                <img src='https://i.imgur.com/bDesrqY.png' onclick="swapImg(this,'https://i.imgur.com/eGGsOyq.png','https://i.imgur.com/bDesrqY.jpg',1);" />
-                <img src='https://i.imgur.com/3kGQPrL.png' onclick="swapImg(this,'https://i.imgur.com/oTfnyUp.png','https://i.imgur.com/3kGQPrL.jpg',1);" />
-                <img src='https://i.imgur.com/DH9OrXx.png' onclick="swapImg(this,'https://i.imgur.com/230uMGP.png','https://i.imgur.com/DH9OrXx.gif',1);" />
-                <img src='https://i.imgur.com/5K5ZaY1.png' onclick="swapImg(this,'https://i.imgur.com/NNSIBI4.png','https://i.imgur.com/5K5ZaY1.gif',1);" />
-                <img src='https://i.imgur.com/9QNZA0Y.png' onclick="swapImg(this,'https://i.imgur.com/AqaG2uQ.png','https://i.imgur.com/9QNZA0Y.jpg',1);" />
-                <img src='https://i.imgur.com/8VTL9nF.png' onclick="swapImg(this,'https://i.imgur.com/9FQ7xNd.jpg','https://i.imgur.com/8VTL9nF.jpg',1);" />
-                <img src='https://i.imgur.com/00DNRlO.png' onclick="swapImg(this,'https://i.imgur.com/Axte9RJ.jpg','https://i.imgur.com/00DNRlO.jpg',1);" />
-                <img src='https://i.imgur.com/I0NepLQ.png' onclick="swapImg(this,'https://i.imgur.com/uPZK472.jpg','https://i.imgur.com/I0NepLQ.jpg',1);" />
-                <img src='https://i.imgur.com/DnBgrgv.png' onclick="swapImg(this,'https://i.imgur.com/lA1ny7l.png','https://i.imgur.com/DnBgrgv.jpg',1);" />
-                <img src='https://i.imgur.com/OeMLFkM.png' onclick="swapImg(this,'https://i.imgur.com/Jy2uCFR.png','https://i.imgur.com/OeMLFkM.jpg',1);" />
-                <img src='https://i.imgur.com/HimxBnq.png' onclick="swapImg(this,'https://i.imgur.com/PFZfvjX.jpg','https://i.imgur.com/HimxBnq.jpg',1);" />
-                <img src='https://i.imgur.com/RuyQYFf.png' onclick="swapImg(this,'https://i.imgur.com/aN9YUMh.png','https://i.imgur.com/RuyQYFf.jpg',1);" />
-                <img src='https://i.imgur.com/KNlJlTq.png' onclick="swapImg(this,'https://i.imgur.com/9WJL38W.png','https://i.imgur.com/KNlJlTq.jpg',1);" />
-                <img src='https://i.imgur.com/94LuJNG.png' onclick="swapImg(this,'https://i.imgur.com/D1dfagi.png','https://i.imgur.com/94LuJNG.jpg',1);" />
-                <img src='https://i.imgur.com/vCLC3kB.png' onclick="swapImg(this,'https://i.imgur.com/XLW8iyd.png','https://i.imgur.com/vCLC3kB.jpg',1);" />
-                <img src='https://i.imgur.com/Tsf2JZb.png' onclick="swapImg(this,'https://i.imgur.com/oxQgy8U.jpg','https://i.imgur.com/Tsf2JZb.jpg',1);" />
-                <img src='https://i.imgur.com/8MQA6BU.png' onclick="swapImg(this,'https://i.imgur.com/DhItn6t.png','https://i.imgur.com/8MQA6BU.jpg',1);" />
-                <img src='https://i.imgur.com/8mxMwNv.png' onclick="swapImg(this,'https://i.imgur.com/ypGdJ6X.png','https://i.imgur.com/8mxMwNv.jpg',1);" />
-                <img src='https://i.imgur.com/F7RLitT.png' onclick="swapImg(this,'https://i.imgur.com/oqW7lLw.png','https://i.imgur.com/F7RLitT.jpg',1);" />
-                <img src='https://i.imgur.com/IcvvzgY.png' onclick="swapImg(this,'https://i.imgur.com/LFOFLBI.png','https://i.imgur.com/IcvvzgY.jpg',1);" />
-                <img src='https://i.imgur.com/gFCbonR.png' onclick="swapImg(this,'https://i.imgur.com/htCHbV0.png','https://i.imgur.com/gFCbonR.jpg',1);" />
-                <img src='https://i.imgur.com/orJ4lOm.png' onclick="swapImg(this,'https://i.imgur.com/pbVfQZj.png','https://i.imgur.com/orJ4lOm.jpg',1);" />
-                <img src='https://i.imgur.com/03V3nD1.png' onclick="swapImg(this,'https://i.imgur.com/TPaJZRa.png','https://i.imgur.com/03V3nD1.jpg',1);" />
-                <img src='https://i.imgur.com/u0ppRY5.png' onclick="swapImg(this,'https://i.imgur.com/RcijSEa.png','https://i.imgur.com/u0ppRY5.jpg',1);" />
-                <img src='https://i.imgur.com/brd0IGO.png' onclick="swapImg(this,'https://i.imgur.com/yExAZD5.png','https://i.imgur.com/brd0IGO.jpg',1);" />
-                <img src='https://i.imgur.com/PQGf1Vv.png' onclick="swapImg(this,'https://i.imgur.com/TwFIOrA.jpg','https://i.imgur.com/PQGf1Vv.jpg',1);" />
-                <img src='https://i.imgur.com/PKDceBm.png' onclick="swapImg(this,'https://i.imgur.com/2oxn5kz.jpg','https://i.imgur.com/PKDceBm.jpg',1);" />
-                <img src='https://i.imgur.com/kSwB1Ev.png' onclick="swapImg(this,'https://i.imgur.com/KvHF6m0.jpg','https://i.imgur.com/kSwB1Ev.jpg',1);" />
-                <img src='https://i.imgur.com/4Qp8Q1W.png' onclick="swapImg(this,'https://i.imgur.com/NCVO7da.png','https://i.imgur.com/4Qp8Q1W.jpg',1);" />
-                <img src='https://i.imgur.com/HePaT25.png' onclick="swapImg(this,'https://i.imgur.com/xyQTiiD.png','https://i.imgur.com/HePaT25.jpg',1);" />
-                <img src='https://i.imgur.com/haFex6O.png' onclick="swapImg(this,'https://i.imgur.com/L3VFTiH.jpg','https://i.imgur.com/haFex6O.jpg',1);" />
-                <img src='https://i.imgur.com/sQnehsZ.png' onclick="swapImg(this,'https://i.imgur.com/iqmjYrm.png','https://i.imgur.com/sQnehsZ.jpg',1);" />
-                <img src='https://i.imgur.com/XfGHZBv.png' onclick="swapImg(this,'https://i.imgur.com/TpezQLO.png','https://i.imgur.com/XfGHZBv.jpg',1);" />
-                <img src='https://i.imgur.com/d2xNcWQ.png' onclick="swapImg(this,'https://i.imgur.com/w1MZgsB.png','https://i.imgur.com/d2xNcWQ.jpg',1);" />
-                <img src='https://i.imgur.com/eBD2BDc.png' onclick="swapImg(this,'https://i.imgur.com/7COOssv.png','https://i.imgur.com/eBD2BDc.jpg',1);" />
-                <img src='https://i.imgur.com/9wLjBPb.png' onclick="swapImg(this,'https://i.imgur.com/gpUBZiA.png','https://i.imgur.com/9wLjBPb.jpg',1);" />
-                <img src='https://i.imgur.com/tFcursv.png' onclick="swapImg(this,'https://i.imgur.com/ePH3Ks8.png','https://i.imgur.com/tFcursv.jpg',1);" />
-                <img src='https://i.imgur.com/ZM3NSMc.png' onclick="swapImg(this,'https://i.imgur.com/KBI9LzZ.png','https://i.imgur.com/ZM3NSMc.jpg',1);" />
-                <img src='https://i.imgur.com/uxs286B.png' onclick="swapImg(this,'https://i.imgur.com/pwEG4ic.png','https://i.imgur.com/uxs286B.jpg',1);" />
-                <img src='https://i.imgur.com/AxiQxnq.png' onclick="swapImg(this,'https://i.imgur.com/AfrBOmT.jpg','https://i.imgur.com/AxiQxnq.gif',1);" />
-                <img src='https://i.imgur.com/rRDdvCE.png' onclick="swapImg(this,'https://i.imgur.com/XEDbj8C.jpg','https://i.imgur.com/rRDdvCE.jpg',1);" />
-                <img src='https://i.imgur.com/v0wcptB.png' onclick="swapImg(this,'https://i.imgur.com/VHlIetb.jpg','https://i.imgur.com/v0wcptB.jpg',1);" />
-                <img src='https://i.imgur.com/5ekbPw1.png' onclick="swapImg(this,'https://i.imgur.com/Az2W83U.png','https://i.imgur.com/5ekbPw1.jpg',1);" />
-                <img src='https://i.imgur.com/qruwZBX.png' onclick="swapImg(this,'https://i.imgur.com/74scAdj.png','https://i.imgur.com/qruwZBX.jpg',1);" />
-                <img src='https://i.imgur.com/Y6Tg40h.png' onclick="swapImg(this,'https://i.imgur.com/5LY560z.jpg','https://i.imgur.com/Y6Tg40h.jpg',1);" />
-                <img src='https://i.imgur.com/v81zmoH.png' onclick="swapImg(this,'https://i.imgur.com/miSqcm3.png','https://i.imgur.com/v81zmoH.jpg',1);" />
-                <img src='https://i.imgur.com/QSJM6cZ.png' onclick="swapImg(this,'https://i.imgur.com/I9SepNu.png','https://i.imgur.com/QSJM6cZ.gif',1);" />
-                <img src='https://i.imgur.com/XKarm53.png' onclick="swapImg(this,'https://i.imgur.com/12s1xV4.png','https://i.imgur.com/XKarm53.jpg',1);" />
-                <img src='https://i.imgur.com/RBT8z0J.png' onclick="swapImg(this,'https://i.imgur.com/mceWw4X.png','https://i.imgur.com/RBT8z0J.jpg',1);" />
-                <img src='https://i.imgur.com/xNfEgsZ.png' onclick="swapImg(this,'https://i.imgur.com/JoqJjnk.jpg','https://i.imgur.com/xNfEgsZ.jpg',1);" />
-                <img src='https://i.imgur.com/Q924ajb.png' onclick="swapImg(this,'https://i.imgur.com/iF3fmV5.png','https://i.imgur.com/Q924ajb.jpg',1);" />
-                <img src='https://i.imgur.com/0ZoDmaQ.png' onclick="swapImg(this,'https://i.imgur.com/q08MKWx.png','https://i.imgur.com/0ZoDmaQ.gif',1);" />
-                <img src='https://i.imgur.com/lGv5zi7.png' onclick="swapImg(this,'https://i.imgur.com/Fe4X5Rh.png','https://i.imgur.com/lGv5zi7.gif',1);" />
-                <img src='https://i.imgur.com/WIDYlY2.png' onclick="swapImg(this,'https://i.imgur.com/ZScA8Bb.png','https://i.imgur.com/WIDYlY2.gif',1);" />
-                <img src='https://i.imgur.com/e38o6HY.png' onclick="swapImg(this,'https://i.imgur.com/P8wtVSd.png','https://i.imgur.com/e38o6HY.jpg',1);" />
-                <img src='https://i.imgur.com/Gj98QWw.png' onclick="swapImg(this,'https://i.imgur.com/NMdtjLX.png','https://i.imgur.com/Gj98QWw.gif',1);" />
-                <img src='https://i.imgur.com/CIPFOP4.png' onclick="swapImg(this,'https://i.imgur.com/hAHq6O0.png','https://i.imgur.com/CIPFOP4.jpg',0);" />
-                <img src='https://i.imgur.com/qInaUiv.png' onclick="swapImg(this,'https://i.imgur.com/nH3OAJb.png','https://i.imgur.com/qInaUiv.jpg',1);" />
-                <img src='https://i.imgur.com/iTbTHU1.png' onclick="swapImg(this,'https://i.imgur.com/3wf4B9C.jpg','https://i.imgur.com/iTbTHU1.jpg',1);" />
+                <img src='enieslobby/1a.jpg' onclick="swapImg(this,'enieslobby/1b.jpg','enieslobby/1a.jpg',1);" />
+                <img src='enieslobby/2a.jpg' onclick="swapImg(this,'enieslobby/2b.jpg','enieslobby/2a.jpg',1);" />
+                <img src='enieslobby/3a.jpg' onclick="swapImg(this,'enieslobby/3b.jpg','enieslobby/3a.jpg',1);" />
+                <img src='enieslobby/4a.jpg' onclick="swapImg(this,'enieslobby/4b.jpg','enieslobby/4a.jpg',1);" />
+                <img src='enieslobby/5a.jpg' onclick="swapImg(this,'enieslobby/5b.jpg','enieslobby/5a.jpg',1);" />
+                <img src='enieslobby/6a.jpg' onclick="swapImg(this,'enieslobby/6b.jpg','enieslobby/6a.jpg',1);" />
+                <img src='enieslobby/7a.jpg' onclick="swapImg(this,'enieslobby/7b.jpg','enieslobby/7a.jpg',1);" />
+                <img src='enieslobby/8a.jpg' onclick="swapImg(this,'enieslobby/8b.jpg','enieslobby/8a.jpg',1);" />
+                <img src='enieslobby/9a.jpg' onclick="swapImg(this,'enieslobby/9b.jpg','enieslobby/9a.jpg',1);" />
+                <img src='enieslobby/10a.jpg' onclick="swapImg(this,'enieslobby/10b.jpg','enieslobby/10a.jpg',1);" />
+                <img src='enieslobby/11a.jpg' onclick="swapImg(this,'enieslobby/11b.jpg','enieslobby/11a.jpg',1);" />
+                <img src='enieslobby/12a.jpg' onclick="swapImg(this,'enieslobby/12b.jpg','enieslobby/12a.jpg',1);" />
+                <img src='enieslobby/13a.jpg' onclick="swapImg(this,'enieslobby/13b.jpg','enieslobby/13a.jpg',1);" />
+                <img src='enieslobby/14a.jpg' onclick="swapImg(this,'enieslobby/14b.jpg','enieslobby/14a.jpg',1);" />
+                <img class="video" src='enieslobby/15a.gif' onclick="swapImg(this,'enieslobby/15b.jpg','enieslobby/15a.gif',1);" />
+                <img src='enieslobby/16a.jpg' onclick="swapImg(this,'enieslobby/16b.jpg','enieslobby/16a.jpg',1);" />
+                <img src='enieslobby/17a.jpg' onclick="swapImg(this,'enieslobby/17b.jpg','enieslobby/17a.jpg',1);" />
+                <img src='enieslobby/18a.jpg' onclick="swapImg(this,'enieslobby/18b.jpg','enieslobby/18a.jpg',1);" />
+                <img src='enieslobby/19a.jpg' onclick="swapImg(this,'enieslobby/19b.jpg','enieslobby/19a.jpg',1);" />
+                <img src='enieslobby/20a.jpg' onclick="swapImg(this,'enieslobby/20b.jpg','enieslobby/20a.jpg',1);" />
+                <img src='enieslobby/21a.jpg' onclick="swapImg(this,'enieslobby/21b.jpg','enieslobby/21a.jpg',1);" />
+                <img src='enieslobby/22a.jpg' onclick="swapImg(this,'enieslobby/22b.jpg','enieslobby/22a.jpg',1);" />
+                <img src='enieslobby/23a.jpg' onclick="swapImg(this,'enieslobby/23b.jpg','enieslobby/23a.jpg',1);" />
+                <img src='enieslobby/24a.jpg' onclick="swapImg(this,'enieslobby/24b.jpg','enieslobby/24a.jpg',1);" />
+                <img src='enieslobby/25a.jpg' onclick="swapImg(this,'enieslobby/25b.jpg','enieslobby/25a.jpg',1);" />
+                <img src='enieslobby/26a.jpg' onclick="swapImg(this,'enieslobby/26b.jpg','enieslobby/26a.jpg',1);" />
+                <img src='enieslobby/27a.jpg' onclick="swapImg(this,'enieslobby/27b.jpg','enieslobby/27a.jpg',1);" />
+                <img src='enieslobby/28a.jpg' onclick="swapImg(this,'enieslobby/28b.jpg','enieslobby/28a.jpg',1);" />
+                <img src='enieslobby/29a.jpg' onclick="swapImg(this,'enieslobby/29b.jpg','enieslobby/29a.jpg',1);" />
+                <img src='enieslobby/30a.jpg' onclick="swapImg(this,'enieslobby/30b.jpg','enieslobby/30a.jpg',1);" />
+                <img src='enieslobby/32a.jpg' onclick="swapImg(this,'enieslobby/32b.jpg','enieslobby/32a.jpg',1);" />
+                <img src='enieslobby/33a.jpg' onclick="swapImg(this,'enieslobby/33b.jpg','enieslobby/33a.jpg',1);" />
+                <img src='enieslobby/34a.jpg' onclick="swapImg(this,'enieslobby/34b.jpg','enieslobby/34a.jpg',1);" />
+                <img src='enieslobby/35a.jpg' onclick="swapImg(this,'enieslobby/35b.jpg','enieslobby/35a.jpg',1);" />
+                <img src='enieslobby/36a.jpg' onclick="swapImg(this,'enieslobby/36b.jpg','enieslobby/36a.jpg',1);" />
+                <img src='enieslobby/37a.jpg' onclick="swapImg(this,'enieslobby/37b.jpg','enieslobby/37a.jpg',1);" />
+                <img src='enieslobby/38a.jpg' onclick="swapImg(this,'enieslobby/38b.jpg','enieslobby/38a.jpg',1);" />
+                <img src='enieslobby/39a.jpg' onclick="swapImg(this,'enieslobby/39b.jpg','enieslobby/39a.jpg',1);" />
+                <img src='enieslobby/30a.jpg' onclick="swapImg(this,'enieslobby/30b.jpg','enieslobby/30a.jpg',1);" />
+                <img src='enieslobby/40a.jpg' onclick="swapImg(this,'enieslobby/40b.jpg','enieslobby/40a.jpg',1);" />
+                <img src='enieslobby/41a.jpg' onclick="swapImg(this,'enieslobby/41b.jpg','enieslobby/41a.jpg',1);" />
+                <img src='enieslobby/42a.jpg' onclick="swapImg(this,'enieslobby/42b.jpg','enieslobby/42a.jpg',1);" />
+                <img src='enieslobby/43a.jpg' onclick="swapImg(this,'enieslobby/43b.jpg','enieslobby/43a.jpg',1);" />
+                <img src='enieslobby/44a.jpg' onclick="swapImg(this,'enieslobby/44b.jpg','enieslobby/44a.jpg',1);" />
+                <img src='enieslobby/45a.jpg' onclick="swapImg(this,'enieslobby/45b.jpg','enieslobby/45a.jpg',1);" />
+                <img src='enieslobby/46a.jpg' onclick="swapImg(this,'enieslobby/46b.jpg','enieslobby/46a.jpg',1);" />
+                <img src='enieslobby/47a.jpg' onclick="swapImg(this,'enieslobby/47b.jpg','enieslobby/47a.jpg',1);" />
+                <img src='enieslobby/48a.jpg' onclick="swapImg(this,'enieslobby/48b.jpg','enieslobby/48a.jpg',1);" />
+                <img src='enieslobby/49a.jpg' onclick="swapImg(this,'enieslobby/49b.jpg','enieslobby/49a.jpg',1);" />
+                <img src='enieslobby/50a.jpg' onclick="swapImg(this,'enieslobby/50b.jpg','enieslobby/50a.jpg',1);" />
+                <img src='enieslobby/51a.jpg' onclick="swapImg(this,'enieslobby/51b.jpg','enieslobby/51a.jpg',1);" />
+                <img src='enieslobby/52a.jpg' onclick="swapImg(this,'enieslobby/52b.jpg','enieslobby/52a.jpg',1);" />
+                <img class="video" src='enieslobby/53a.gif' onclick="swapImg(this,'enieslobby/53b.jpg','enieslobby/53a.gif',1);" />
+                <img class="video" src='enieslobby/54a.gif' onclick="swapImg(this,'enieslobby/54b.jpg','enieslobby/54a.gif',1);" />
+                <img src='enieslobby/55a.jpg' onclick="swapImg(this,'enieslobby/55b.jpg','enieslobby/55a.jpg',1);" />
+                <img src='enieslobby/56a.jpg' onclick="swapImg(this,'enieslobby/56b.jpg','enieslobby/56a.jpg',1);" />
+                <img src='enieslobby/57a.jpg' onclick="swapImg(this,'enieslobby/57b.jpg','enieslobby/57a.jpg',1);" />
+                <img src='enieslobby/58a.jpg' onclick="swapImg(this,'enieslobby/58b.jpg','enieslobby/58a.jpg',1);" />
+                <img src='enieslobby/59a.jpg' onclick="swapImg(this,'enieslobby/59b.jpg','enieslobby/59a.jpg',1);" />
+                <img src='enieslobby/60a.jpg' onclick="swapImg(this,'enieslobby/60b.jpg','enieslobby/60a.jpg',1);" />
+                <img src='enieslobby/61a.jpg' onclick="swapImg(this,'enieslobby/61b.jpg','enieslobby/61a.jpg',1);" />
+                <img src='enieslobby/62a.jpg' onclick="swapImg(this,'enieslobby/62b.jpg','enieslobby/62a.jpg',1);" />
+                <img src='enieslobby/63a.jpg' onclick="swapImg(this,'enieslobby/63b.jpg','enieslobby/63a.jpg',1);" />
+                <img src='enieslobby/64a.jpg' onclick="swapImg(this,'enieslobby/64b.jpg','enieslobby/64a.jpg',1);" />
+                <img src='enieslobby/65a.jpg' onclick="swapImg(this,'enieslobby/65b.jpg','enieslobby/65a.jpg',1);" />
+                <img src='enieslobby/66a.jpg' onclick="swapImg(this,'enieslobby/66b.jpg','enieslobby/66a.jpg',1);" />
+                <img src='enieslobby/67a.jpg' onclick="swapImg(this,'enieslobby/67b.jpg','enieslobby/67a.jpg',1);" />
+                <img src='enieslobby/68a.jpg' onclick="swapImg(this,'enieslobby/68b.jpg','enieslobby/68a.jpg',1);" />
+                <img src='enieslobby/69a.jpg' onclick="swapImg(this,'enieslobby/69b.jpg','enieslobby/69a.jpg',1);" />
+                <img src='enieslobby/70a.jpg' onclick="swapImg(this,'enieslobby/70b.jpg','enieslobby/70a.jpg',1);" />
+                <img src='enieslobby/71a.jpg' onclick="swapImg(this,'enieslobby/71b.jpg','enieslobby/71a.jpg',1);" />
+                <img src='enieslobby/72a.jpg' onclick="swapImg(this,'enieslobby/72b.jpg','enieslobby/72a.jpg',1);" />
+                <img src='enieslobby/73a.jpg' onclick="swapImg(this,'enieslobby/73b.jpg','enieslobby/73a.jpg',1);" />
+                <img src='enieslobby/75a.jpg' onclick="swapImg(this,'enieslobby/75b.jpg','enieslobby/75a.jpg',1);" />
+                <img src='enieslobby/76a.jpg' onclick="swapImg(this,'enieslobby/76b.jpg','enieslobby/76a.jpg',1);" />
+                <img src='enieslobby/77a.jpg' onclick="swapImg(this,'enieslobby/77b.jpg','enieslobby/77a.jpg',1);" />
+                <img src='enieslobby/78a.jpg' onclick="swapImg(this,'enieslobby/78b.jpg','enieslobby/78a.jpg',1);" />
+                <img src='enieslobby/79a.jpg' onclick="swapImg(this,'enieslobby/79b.jpg','enieslobby/79a.jpg',1);" />
+                <img src='enieslobby/80a.jpg' onclick="swapImg(this,'enieslobby/80b.jpg','enieslobby/80a.jpg',1);" />
+                <img src='enieslobby/82a.jpg' onclick="swapImg(this,'enieslobby/82b.jpg','enieslobby/82a.jpg',1);" />
+                <img src='enieslobby/83a.jpg' onclick="swapImg(this,'enieslobby/83b.jpg','enieslobby/83a.jpg',1);" />
+                <img src='enieslobby/84a.jpg' onclick="swapImg(this,'enieslobby/84b.jpg','enieslobby/84a.jpg',1);" />
+                <img src='enieslobby/85a.jpg' onclick="swapImg(this,'enieslobby/85b.jpg','enieslobby/85a.jpg',1);" />
+                <img src='enieslobby/86a.jpg' onclick="swapImg(this,'enieslobby/86b.jpg','enieslobby/86a.jpg',1);" />
+                <img src='enieslobby/87a.jpg' onclick="swapImg(this,'enieslobby/87b.jpg','enieslobby/87a.jpg',1);" />
+                <img src='enieslobby/88a.jpg' onclick="swapImg(this,'enieslobby/88b.jpg','enieslobby/88a.jpg',1);" />
+                <img src='enieslobby/89a.jpg' onclick="swapImg(this,'enieslobby/89b.jpg','enieslobby/89a.jpg',1);" />
+                <img src='enieslobby/90a.jpg' onclick="swapImg(this,'enieslobby/90b.jpg','enieslobby/90a.jpg',1);" />
+                <img src='enieslobby/91a.jpg' onclick="swapImg(this,'enieslobby/91b.jpg','enieslobby/91a.jpg',1);" />
+                <img class="video" src='enieslobby/92a.gif' onclick="swapImg(this,'enieslobby/92b.jpg','enieslobby/92a.gif',1);" />
+                <img src='enieslobby/93a.jpg' onclick="swapImg(this,'enieslobby/93b.jpg','enieslobby/93a.jpg',1);" />
+                <img src='enieslobby/94a.jpg' onclick="swapImg(this,'enieslobby/94b.jpg','enieslobby/94a.jpg',1);" />
+                <img src='enieslobby/95a.jpg' onclick="swapImg(this,'enieslobby/95b.jpg','enieslobby/95a.jpg',1);" />
+                <img src='enieslobby/96a.jpg' onclick="swapImg(this,'enieslobby/96b.jpg','enieslobby/96a.jpg',1);" />
+                <img src='enieslobby/97a.jpg' onclick="swapImg(this,'enieslobby/97b.jpg','enieslobby/97a.jpg',1);" />
+                <img src='enieslobby/98a.jpg' onclick="swapImg(this,'enieslobby/98b.jpg','enieslobby/98a.jpg',1);" />
+                <img src='enieslobby/99a.jpg' onclick="swapImg(this,'enieslobby/99b.png','enieslobby/99a.jpg',1);" />
+                <img class="video" src='enieslobby/99a.gif' onclick="swapImg(this,'enieslobby/99b.jpg','enieslobby/99a.gif',1);" />
+                <img src='enieslobby/100a.jpg' onclick="swapImg(this,'enieslobby/100b.jpg','enieslobby/100a.jpg',1);" />
+                <img src='enieslobby/101a.jpg' onclick="swapImg(this,'enieslobby/101b.jpg','enieslobby/101a.jpg',1);" />
+                <img src='enieslobby/102a.jpg' onclick="swapImg(this,'enieslobby/102b.jpg','enieslobby/102a.jpg',1);" />
+                <img class="video" src='enieslobby/103a.gif' onclick="swapImg(this,'enieslobby/103b.jpg','enieslobby/103a.gif',1);" />
+                <img class="video" src='enieslobby/104a.gif' onclick="swapImg(this,'enieslobby/104b.jpg','enieslobby/104a.gif',1);" />
+                <img class="video" src='enieslobby/105a.gif' onclick="swapImg(this,'enieslobby/105b.jpg','enieslobby/105a.gif',1);" />
+                <img src='enieslobby/106a.jpg' onclick="swapImg(this,'enieslobby/106b.jpg','enieslobby/106a.jpg',1);" />
+                <img src='enieslobby/107a.jpg' onclick="swapImg(this,'enieslobby/107b.jpg','enieslobby/107a.jpg',1);" />
+                <img class="video" src='enieslobby/108a.gif' onclick="swapImg(this,'enieslobby/108b.jpg','enieslobby/108a.gif',1);" />
+                <img class="video" src='enieslobby/109a.gif' onclick="swapImg(this,'enieslobby/109b.jpg','enieslobby/109a.gif',1);" />
+                <img src='enieslobby/110a.jpg' onclick="swapImg(this,'enieslobby/110b.jpg','enieslobby/110a.jpg',1);" />
+                <img src='enieslobby/111a.jpg' onclick="swapImg(this,'enieslobby/111b.jpg','enieslobby/111a.jpg',1);" />
+                <img src='enieslobby/112a.jpg' onclick="swapImg(this,'enieslobby/112b.jpg','enieslobby/112a.jpg',1);" />
+                <img class="video" src='enieslobby/113a.gif' onclick="swapImg(this,'enieslobby/113b.jpg','enieslobby/113a.gif',1);" />
+                <img src='enieslobby/114a.jpg' onclick="swapImg(this,'enieslobby/114b.jpg','enieslobby/114a.jpg',1);" />
+                <img src='enieslobby/115a.jpg' onclick="swapImg(this,'enieslobby/115b.jpg','enieslobby/115a.jpg',1);" />
+                <img src='enieslobby/116a.jpg' onclick="swapImg(this,'enieslobby/116b.jpg','enieslobby/116a.jpg',1);" />
+                <img src='enieslobby/117a.jpg' onclick="swapImg(this,'enieslobby/117b.jpg','enieslobby/117a.jpg',1);" />
+                <img src='enieslobby/118a.jpg' onclick="swapImg(this,'enieslobby/118b.jpg','enieslobby/118a.jpg',1);" />
+                <img src='enieslobby/119a.jpg' onclick="swapImg(this,'enieslobby/119b.jpg','enieslobby/119a.jpg',1);" />
+                <img class="video" src='enieslobby/120a.gif' onclick="swapImg(this,'enieslobby/120b.jpg','enieslobby/120a.gif',1);" />
+                <img src='enieslobby/121a.jpg' onclick="swapImg(this,'enieslobby/121b.jpg','enieslobby/121a.jpg',1);" />
+                <img src='enieslobby/122a.jpg' onclick="swapImg(this,'enieslobby/122b.jpg','enieslobby/122a.jpg',1);" />
+                <img src='enieslobby/123a.jpg' onclick="swapImg(this,'enieslobby/123b.jpg','enieslobby/123a.jpg',1);" />
+                <img src='enieslobby/124a.jpg' onclick="swapImg(this,'enieslobby/124b.jpg','enieslobby/124a.jpg',1);" />
+                <img class="video" src='enieslobby/125a.gif' onclick="swapImg(this,'enieslobby/125b.jpg','enieslobby/125a.gif',1);" />
+                <img src='enieslobby/126a.jpg' onclick="swapImg(this,'enieslobby/126b.jpg','enieslobby/126a.jpg',1);" />
+                <img src='enieslobby/127a.jpg' onclick="swapImg(this,'enieslobby/127b.jpg','enieslobby/127a.jpg',1);" />
+                <img src='enieslobby/128a.jpg' onclick="swapImg(this,'enieslobby/128b.jpg','enieslobby/128a.jpg',1);" />
+                <img class="video" src='enieslobby/129a.gif' onclick="swapImg(this,'enieslobby/129b.jpg','enieslobby/129a.gif',1);" />
+                <img class="video" src='enieslobby/130a.gif' onclick="swapImg(this,'enieslobby/130b.jpg','enieslobby/130a.gif',1);" />
+                <img class="video" src='enieslobby/131a.gif' onclick="swapImg(this,'enieslobby/131b.jpg','enieslobby/131a.gif',1);" />
+                <img src='enieslobby/132a.jpg' onclick="swapImg(this,'enieslobby/132b.jpg','enieslobby/132a.jpg',1);" />
+                <img src='enieslobby/133a.jpg' onclick="swapImg(this,'enieslobby/133b.jpg','enieslobby/133a.jpg',1);" />
+                <img src='enieslobby/134a.jpg' onclick="swapImg(this,'enieslobby/134b.jpg','enieslobby/134a.jpg',1);" />
+                <img class="video" src='enieslobby/135a.gif' onclick="swapImg(this,'enieslobby/135b.jpg','enieslobby/135a.gif',1);" />
+                <img src='enieslobby/136a.jpg' onclick="swapImg(this,'enieslobby/136b.jpg','enieslobby/136a.jpg',1);" />
+                <img class="video" src='enieslobby/137a.gif' onclick="swapImg(this,'enieslobby/137b.jpg','enieslobby/137a.gif',1);" />
+                <img src='enieslobby/138a.jpg' onclick="swapImg(this,'enieslobby/138b.jpg','enieslobby/138a.jpg',1);" />
+                <img src='enieslobby/139a.jpg' onclick="swapImg(this,'enieslobby/139b.jpg','enieslobby/139a.jpg',1);" />
+                <img src='enieslobby/140a.jpg' onclick="swapImg(this,'enieslobby/140b.jpg','enieslobby/140a.jpg',1);" />
+                <img src='enieslobby/141a.jpg' onclick="swapImg(this,'enieslobby/141b.jpg','enieslobby/141a.jpg',1);" />
+                <img src='enieslobby/142a.jpg' onclick="swapImg(this,'enieslobby/142b.jpg','enieslobby/142a.jpg',1);" />
+                <img src='enieslobby/143a.jpg' onclick="swapImg(this,'enieslobby/143b.jpg','enieslobby/143a.jpg',1);" />
+                <img src='enieslobby/144a.jpg' onclick="swapImg(this,'enieslobby/144b.jpg','enieslobby/144a.jpg',1);" />
+                <img src='enieslobby/145a.jpg' onclick="swapImg(this,'enieslobby/145b.jpg','enieslobby/145a.jpg',1);" />
+                <img src='enieslobby/146a.jpg' onclick="swapImg(this,'enieslobby/146b.jpg','enieslobby/146a.jpg',1);" />
+                <img src='enieslobby/147a.jpg' onclick="swapImg(this,'enieslobby/147b.jpg','enieslobby/147a.jpg',1);" />
+                <img src='enieslobby/148a.jpg' onclick="swapImg(this,'enieslobby/148b.jpg','enieslobby/148a.jpg',1);" />
+                <img src='enieslobby/149a.jpg' onclick="swapImg(this,'enieslobby/149b.jpg','enieslobby/149a.jpg',1);" />
+                <img src='enieslobby/150a.jpg' onclick="swapImg(this,'enieslobby/150b.jpg','enieslobby/150a.jpg',1);" />
+                <img class="video" src='enieslobby/151a.gif' onclick="swapImg(this,'enieslobby/151b.jpg','enieslobby/151a.gif',1);" />
+                <img src='enieslobby/152a.jpg' onclick="swapImg(this,'enieslobby/152b.jpg','enieslobby/152a.jpg',1);" />
+                <img src='enieslobby/153a.jpg' onclick="swapImg(this,'enieslobby/153b.jpg','enieslobby/153a.jpg',1);" />
+                <img src='enieslobby/154a.jpg' onclick="swapImg(this,'enieslobby/154b.jpg','enieslobby/154a.jpg',1);" />
+                <img src='enieslobby/155a.jpg' onclick="swapImg(this,'enieslobby/155b.jpg','enieslobby/155a.jpg',1);" />
+                <img class="video" src='enieslobby/156a.gif' onclick="swapImg(this,'enieslobby/156b.jpg','enieslobby/156a.gif',1);" />
+                <img src='enieslobby/157a.jpg' onclick="swapImg(this,'enieslobby/157b.jpg','enieslobby/157a.jpg',1);" />
+                <img class="video" src='enieslobby/158a.gif' onclick="swapImg(this,'enieslobby/158b.jpg','enieslobby/158a.gif',1);" />
+                <img class="video" src='enieslobby/159a.gif' onclick="swapImg(this,'enieslobby/159b.jpg','enieslobby/159a.gif',1);" />
+                <img class="video" src='enieslobby/160a.gif' onclick="swapImg(this,'enieslobby/160b.jpg','enieslobby/160a.gif',1);" />
+                <img src='enieslobby/161a.jpg' onclick="swapImg(this,'enieslobby/161b.jpg','enieslobby/161a.jpg',1);" />
+                <img src='enieslobby/162a.jpg' onclick="swapImg(this,'enieslobby/162b.jpg','enieslobby/162a.jpg',1);" />
+                <img class="video" src='enieslobby/163a.gif' onclick="swapImg(this,'enieslobby/163b.jpg','enieslobby/163a.gif',1);" />
+                <img src='enieslobby/164a.jpg' onclick="swapImg(this,'enieslobby/164b.jpg','enieslobby/164a.jpg',1);" />
+                <img src='enieslobby/165a.jpg' onclick="swapImg(this,'enieslobby/165b.jpg','enieslobby/165a.jpg',1);" />
+                <img src='enieslobby/166a.jpg' onclick="swapImg(this,'enieslobby/166b.jpg','enieslobby/166a.jpg',1);" />
+                <img src='enieslobby/167a.jpg' onclick="swapImg(this,'enieslobby/167b.jpg','enieslobby/167a.jpg',1);" />
+                <img src='enieslobby/168a.jpg' onclick="swapImg(this,'enieslobby/168b.jpg','enieslobby/168a.jpg',1);" />
+                <img src='enieslobby/169a.jpg' onclick="swapImg(this,'enieslobby/169b.jpg','enieslobby/169a.jpg',1);" />
+                <img src='enieslobby/170a.jpg' onclick="swapImg(this,'enieslobby/170b.jpg','enieslobby/170a.jpg',1);" />
+                <img src='enieslobby/171a.jpg' onclick="swapImg(this,'enieslobby/171b.jpg','enieslobby/171a.jpg',1);" />
+                <img src='enieslobby/172a.jpg' onclick="swapImg(this,'enieslobby/172b.jpg','enieslobby/172a.jpg',1);" />
+                <img src='enieslobby/173a.jpg' onclick="swapImg(this,'enieslobby/173b.jpg','enieslobby/173a.jpg',1);" />
+                <img src='enieslobby/174a.jpg' onclick="swapImg(this,'enieslobby/174b.jpg','enieslobby/174a.jpg',1);" />
+                <img class="video" src='enieslobby/175a.gif' onclick="swapImg(this,'enieslobby/175b.jpg','enieslobby/175a.gif',1);" />
+                <img src='enieslobby/176a.jpg' onclick="swapImg(this,'enieslobby/176b.jpg','enieslobby/176a.jpg',1);" />
+                <img src='enieslobby/177a.jpg' onclick="swapImg(this,'enieslobby/177b.jpg','enieslobby/177a.jpg',1);" />
+                <img src='enieslobby/178a.jpg' onclick="swapImg(this,'enieslobby/178b.jpg','enieslobby/178a.jpg',1);" />
+                <img src='enieslobby/179a.jpg' onclick="swapImg(this,'enieslobby/179b.jpg','enieslobby/179a.jpg',1);" />
+                <img src='enieslobby/180a.jpg' onclick="swapImg(this,'enieslobby/180b.jpg','enieslobby/180a.jpg',1);" />
+                <img src='enieslobby/181a.jpg' onclick="swapImg(this,'enieslobby/181b.jpg','enieslobby/181a.jpg',1);" />
+                <img class="video" src='enieslobby/182a.gif' onclick="swapImg(this,'enieslobby/182b.jpg','enieslobby/182a.gif',1);" />
+                <img src='enieslobby/183a.jpg' onclick="swapImg(this,'enieslobby/183b.jpg','enieslobby/183a.jpg',1);" />
+                <img src='enieslobby/184a.jpg' onclick="swapImg(this,'enieslobby/184b.jpg','enieslobby/184a.jpg',1);" />
+                <img src='enieslobby/185a.jpg' onclick="swapImg(this,'enieslobby/185b.jpg','enieslobby/185a.jpg',1);" />
+                <img class="video" src='enieslobby/186a.gif' onclick="swapImg(this,'enieslobby/186b.jpg','enieslobby/186a.gif',1);" />
+                <img class="video" src='enieslobby/187a.gif' onclick="swapImg(this,'enieslobby/187b.jpg','enieslobby/187a.gif',1);" />
+                <img class="video" src='enieslobby/188a.gif' onclick="swapImg(this,'enieslobby/188b.jpg','enieslobby/188a.gif',1);" />
+                <img class="video" src='enieslobby/189a.gif' onclick="swapImg(this,'enieslobby/189b.jpg','enieslobby/189a.gif',1);" />
+                <img src='enieslobby/190a.jpg' onclick="swapImg(this,'enieslobby/190b.jpg','enieslobby/190a.jpg',1);" />
+                <img class="video" src='enieslobby/191a.gif' onclick="swapImg(this,'enieslobby/191b.jpg','enieslobby/191a.gif',1);" />
+                <img class="video" src='enieslobby/192a.gif' onclick="swapImg(this,'enieslobby/192b.jpg','enieslobby/192a.gif',1);" />
+                <img src='enieslobby/193a.jpg' onclick="swapImg(this,'enieslobby/193b.jpg','enieslobby/193a.jpg',1);" />
+                <img src='enieslobby/194a.jpg' onclick="swapImg(this,'enieslobby/194b.jpg','enieslobby/194a.jpg',1);" />
+                <img src='enieslobby/195a.jpg' onclick="swapImg(this,'enieslobby/195b.jpg','enieslobby/195a.jpg',1);" />
+                <img src='enieslobby/196a.jpg' onclick="swapImg(this,'enieslobby/196b.jpg','enieslobby/196a.jpg',1);" />
+                <img class="video" src='enieslobby/197a.gif' onclick="swapImg(this,'enieslobby/197b.jpg','enieslobby/197a.gif',1);" />
+                <img src='enieslobby/198a.jpg' onclick="swapImg(this,'enieslobby/198b.jpg','enieslobby/198a.jpg',1);" />
+                <img src='enieslobby/199a.jpg' onclick="swapImg(this,'enieslobby/199b.jpg','enieslobby/199a.jpg',1);" />
+                <img class="video" src='enieslobby/200a.gif' onclick="swapImg(this,'enieslobby/200b.jpg','enieslobby/200a.gif',1);" />
+                <img src='enieslobby/201a.jpg' onclick="swapImg(this,'enieslobby/201b.jpg','enieslobby/201a.jpg',1);" />
+                <img src='enieslobby/202a.jpg' onclick="swapImg(this,'enieslobby/202b.jpg','enieslobby/202a.jpg',1);" />
+                <img class="video" src='enieslobby/203a.gif' onclick="swapImg(this,'enieslobby/203b.jpg','enieslobby/203a.gif',1);" />
+                <img src='enieslobby/204a.jpg' onclick="swapImg(this,'enieslobby/204b.jpg','enieslobby/204a.jpg',1);" />
+                <img src='enieslobby/205a.jpg' onclick="swapImg(this,'enieslobby/205b.jpg','enieslobby/205a.jpg',1);" />
+                <img src='enieslobby/206a.jpg' onclick="swapImg(this,'enieslobby/206b.jpg','enieslobby/206a.jpg',1);" />
+                <img src='enieslobby/207a.jpg' onclick="swapImg(this,'enieslobby/207b.jpg','enieslobby/207a.jpg',1);" />
+                <img src='enieslobby/208a.jpg' onclick="swapImg(this,'enieslobby/208b.jpg','enieslobby/208a.jpg',1);" />
+                <img src='enieslobby/209a.jpg' onclick="swapImg(this,'enieslobby/209b.jpg','enieslobby/209a.jpg',1);" />
+                <img src='enieslobby/210a.jpg' onclick="swapImg(this,'enieslobby/210b.jpg','enieslobby/210a.jpg',1);" />
+                <img class="video" src='enieslobby/211a.gif' onclick="swapImg(this,'enieslobby/211b.jpg','enieslobby/211a.gif',1);" />
+                <img src='enieslobby/212a.jpg' onclick="swapImg(this,'enieslobby/212b.jpg','enieslobby/212a.jpg',1);" />
+                <img class="video" src='enieslobby/213a.gif' onclick="swapImg(this,'enieslobby/213b.jpg','enieslobby/213a.gif',1);" />
+                <img src='enieslobby/214a.jpg' onclick="swapImg(this,'enieslobby/214b.jpg','enieslobby/214a.jpg',1);" />
+                <img src='enieslobby/215a.jpg' onclick="swapImg(this,'enieslobby/215b.jpg','enieslobby/215a.jpg',1);" />
+                <img class="video" src='enieslobby/216a.gif' onclick="swapImg(this,'enieslobby/216b.jpg','enieslobby/216a.gif',1);" />
+                <img class="video" src='enieslobby/217a.gif' onclick="swapImg(this,'enieslobby/217b.jpg','enieslobby/217a.gif',1);" />
+                <img src='enieslobby/218a.jpg' onclick="swapImg(this,'enieslobby/218b.jpg','enieslobby/218a.jpg',1);" />
+                <img src='enieslobby/219a.jpg' onclick="swapImg(this,'enieslobby/219b.jpg','enieslobby/219a.jpg',1);" />
+                <img src='enieslobby/220a.jpg' onclick="swapImg(this,'enieslobby/220b.jpg','enieslobby/220a.jpg',1);" />
+                <img class="video" src='enieslobby/221a.gif' onclick="swapImg(this,'enieslobby/221b.jpg','enieslobby/221a.gif',1);" />
+                <img src='enieslobby/222a.jpg' onclick="swapImg(this,'enieslobby/222b.jpg','enieslobby/222a.jpg',1);" />
+                <img src='enieslobby/223a.jpg' onclick="swapImg(this,'enieslobby/223b.jpg','enieslobby/223a.jpg',1);" />
+                <img src='enieslobby/224a.jpg' onclick="swapImg(this,'enieslobby/224b.jpg','enieslobby/224a.jpg',1);" />
+                <img src='enieslobby/225a.jpg' onclick="swapImg(this,'enieslobby/225b.jpg','enieslobby/225a.jpg',1);" />
+                <img src='enieslobby/226a.jpg' onclick="swapImg(this,'enieslobby/226b.jpg','enieslobby/226a.jpg',1);" />
+                <img src='enieslobby/227a.jpg' onclick="swapImg(this,'enieslobby/227b.jpg','enieslobby/227a.jpg',1);" />
+                <img src='enieslobby/228a.jpg' onclick="swapImg(this,'enieslobby/228b.jpg','enieslobby/228a.jpg',1);" />
+                <img class="video" src='enieslobby/229a.gif' onclick="swapImg(this,'enieslobby/229b.jpg','enieslobby/229a.gif',1);" />
+                <img src='enieslobby/230a.jpg' onclick="swapImg(this,'enieslobby/230b.jpg','enieslobby/230a.jpg',1);" />
+                <img src='enieslobby/231a.jpg' onclick="swapImg(this,'enieslobby/231b.jpg','enieslobby/231a.jpg',1);" />
+                <img src='enieslobby/232a.jpg' onclick="swapImg(this,'enieslobby/232b.jpg','enieslobby/232a.jpg',1);" />
+                <img src='enieslobby/233a.jpg' onclick="swapImg(this,'enieslobby/233b.jpg','enieslobby/233a.jpg',1);" />
+                <img src='enieslobby/234a.jpg' onclick="swapImg(this,'enieslobby/234b.jpg','enieslobby/234a.jpg',1);" />
+                <img src='enieslobby/235a.jpg' onclick="swapImg(this,'enieslobby/235b.jpg','enieslobby/235a.jpg',1);" />
+                <img src='enieslobby/236a.jpg' onclick="swapImg(this,'enieslobby/236b.jpg','enieslobby/236a.jpg',1);" />
+                <img src='enieslobby/237a.jpg' onclick="swapImg(this,'enieslobby/237b.jpg','enieslobby/237a.jpg',1);" />
+                <img src='enieslobby/238a.jpg' onclick="swapImg(this,'enieslobby/238b.jpg','enieslobby/238a.jpg',1);" />
+                <img src='enieslobby/239a.jpg' onclick="swapImg(this,'enieslobby/239b.jpg','enieslobby/239a.jpg',1);" />
+                <img class="link" src="enieslobby/240.jpg" usemap="#image-map">
+                <img src='enieslobby/241a.jpg' onclick="swapImg(this,'enieslobby/241b.jpg','enieslobby/241a.jpg',1);" />
+                <img src='enieslobby/242a.jpg' onclick="swapImg(this,'enieslobby/242b.jpg','enieslobby/242a.jpg',1);" />
+                <img src='enieslobby/243a.jpg' onclick="swapImg(this,'enieslobby/243b.jpg','enieslobby/243a.jpg',1);" />
+                <img class="video" src='enieslobby/244a.gif' onclick="swapImg(this,'enieslobby/244b.jpg','enieslobby/244a.gif',1);" />
+                <img src='enieslobby/245a.jpg' onclick="swapImg(this,'enieslobby/245b.jpg','enieslobby/245a.jpg',1);" />
+                <img src='enieslobby/246a.jpg' onclick="swapImg(this,'enieslobby/246b.jpg','enieslobby/246a.jpg',1);" />
+                <img src='enieslobby/247a.jpg' onclick="swapImg(this,'enieslobby/247b.jpg','enieslobby/247a.jpg',1);" />
+                <img src='enieslobby/248a.jpg' onclick="swapImg(this,'enieslobby/248b.jpg','enieslobby/248a.jpg',1);" />
+                <img src='enieslobby/249a.jpg' onclick="swapImg(this,'enieslobby/249b.jpg','enieslobby/249a.jpg',1);" />
+                <img src='enieslobby/250a.jpg' onclick="swapImg(this,'enieslobby/250b.jpg','enieslobby/250a.jpg',1);" />
+                <img src='enieslobby/251a.jpg' onclick="swapImg(this,'enieslobby/251b.jpg','enieslobby/251a.jpg',1);" />
+                <img src='enieslobby/252a.jpg' onclick="swapImg(this,'enieslobby/252b.jpg','enieslobby/252a.jpg',1);" />
+                <img src='enieslobby/253a.jpg' onclick="swapImg(this,'enieslobby/253b.jpg','enieslobby/253a.jpg',1);" />
+                <img class="video" src='enieslobby/254a.gif' onclick="swapImg(this,'enieslobby/254b.jpg','enieslobby/254a.gif',1);" />
+                <img src='enieslobby/255a.jpg' onclick="swapImg(this,'enieslobby/255b.jpg','enieslobby/255a.jpg',1);" />
+                <img src='enieslobby/256a.jpg' onclick="swapImg(this,'enieslobby/256b.jpg','enieslobby/256a.jpg',1);" />
+                <img src='enieslobby/257a.jpg' onclick="swapImg(this,'enieslobby/257b.jpg','enieslobby/257a.jpg',1);" />
+                <img class="video" src='enieslobby/257aa.gif' onclick="swapImg(this,'enieslobby/257bb.jpg','enieslobby/257aa.jpg',1);" />
+                <img class="video" src='enieslobby/258a.gif' onclick="swapImg(this,'enieslobby/258b.jpg','enieslobby/258a.gif',1);" />
+                <img class="video" src='enieslobby/259a.gif' onclick="swapImg(this,'enieslobby/259b.jpg','enieslobby/259a.gif',1);" />
+                <img class="video" src='enieslobby/260a.gif' onclick="swapImg(this,'enieslobby/260b.jpg','enieslobby/260a.gif',1);" />
+                <img class="video" src='enieslobby/261a.gif' onclick="swapImg(this,'enieslobby/261b.jpg','enieslobby/261a.gif',1);" />
+                <img class="video" src='enieslobby/262a.gif' onclick="swapImg(this,'enieslobby/262b.jpg','enieslobby/262a.gif',1);" />
+                <img src='enieslobby/263a.jpg' onclick="swapImg(this,'enieslobby/263b.jpg','enieslobby/263a.jpg',1);" />
+                <img src='enieslobby/264a.jpg' onclick="swapImg(this,'enieslobby/264b.jpg','enieslobby/264a.jpg',1);" />
+                <img class="video" src='enieslobby/265a.gif' onclick="swapImg(this,'enieslobby/265b.jpg','enieslobby/265a.gif',1);" />
+                <img src='enieslobby/266a.jpg' onclick="swapImg(this,'enieslobby/266b.jpg','enieslobby/266a.jpg',1);" />
+                <img class="video" src='enieslobby/267a.gif' onclick="swapImg(this,'enieslobby/267b.jpg','enieslobby/267a.gif',1);" />
+                <img class="video" src='enieslobby/268a.gif' onclick="swapImg(this,'enieslobby/268b.jpg','enieslobby/268a.gif',1);" />
+                <img src='enieslobby/269a.jpg' onclick="swapImg(this,'enieslobby/269b.jpg','enieslobby/269a.jpg',1);" />
+                <img src='enieslobby/270a.jpg' onclick="swapImg(this,'enieslobby/270b.jpg','enieslobby/270a.jpg',1);" />
+                <img src='enieslobby/271a.jpg' onclick="swapImg(this,'enieslobby/271b.jpg','enieslobby/271a.jpg',1);" />
+                <img class="video" src='enieslobby/272a.gif' onclick="swapImg(this,'enieslobby/272b.jpg','enieslobby/272a.gif',1);" />
+                <img src='enieslobby/272aa.gif' onclick="swapImg(this,'enieslobby/272bb.jpg','enieslobby/272aa.jpg',1);" />
+                <img class="video" src='enieslobby/273a.gif' onclick="swapImg(this,'enieslobby/273b.jpg','enieslobby/273a.gif',1);" />
+                <img src='enieslobby/274a.jpg' onclick="swapImg(this,'enieslobby/274b.jpg','enieslobby/274a.jpg',1);" />
+                <img src='enieslobby/274aa.gif' onclick="swapImg(this,'enieslobby/274bb.jpg','enieslobby/274aa.jpg',1);" />
+                <img class="video" src='enieslobby/275a.gif' onclick="swapImg(this,'enieslobby/275b.jpg','enieslobby/275a.gif',1);" />
+                <img src='enieslobby/276a.jpg' onclick="swapImg(this,'enieslobby/276b.jpg','enieslobby/276a.jpg',1);" />
+                <img src='enieslobby/277a.jpg' onclick="swapImg(this,'enieslobby/277b.jpg','enieslobby/277a.jpg',1);" />
+                <img src='enieslobby/278a.jpg' onclick="swapImg(this,'enieslobby/278b.jpg','enieslobby/278a.jpg',1);" />
+                <img src='enieslobby/279a.jpg' onclick="swapImg(this,'enieslobby/279b.jpg','enieslobby/279a.jpg',1);" />
+                <img src='enieslobby/280a.jpg' onclick="swapImg(this,'enieslobby/280b.jpg','enieslobby/280a.jpg',1);" />
+                <img class="video" src='enieslobby/281a.gif' onclick="swapImg(this,'enieslobby/281b.jpg','enieslobby/281a.gif',1);" />
+                <img src='enieslobby/282a.jpg' onclick="swapImg(this,'enieslobby/282b.jpg','enieslobby/282a.jpg',1);" />
+                <img src='enieslobby/283a.jpg' onclick="swapImg(this,'enieslobby/283b.jpg','enieslobby/283a.jpg',1);" />
+                <img src='enieslobby/284a.jpg' onclick="swapImg(this,'enieslobby/284b.jpg','enieslobby/284a.jpg',1);" />
+                <img src='enieslobby/285a.jpg' onclick="swapImg(this,'enieslobby/285b.jpg','enieslobby/285a.jpg',1);" />
+                <img src='enieslobby/286a.jpg' onclick="swapImg(this,'enieslobby/286b.jpg','enieslobby/286a.jpg',1);" />
+                <img src='enieslobby/287a.jpg' onclick="swapImg(this,'enieslobby/287b.jpg','enieslobby/287a.jpg',1);" />
+                <img src='enieslobby/288a.jpg' onclick="swapImg(this,'enieslobby/288b.jpg','enieslobby/288a.jpg',1);" />
+                <img src='enieslobby/289a.jpg' onclick="swapImg(this,'enieslobby/289b.jpg','enieslobby/289a.jpg',1);" />
+                <img src='enieslobby/290a.jpg' onclick="swapImg(this,'enieslobby/290b.jpg','enieslobby/290a.jpg',1);" />
+                <img class="video" src='enieslobby/291a.gif' onclick="swapImg(this,'enieslobby/291b.jpg','enieslobby/291a.gif',1);" />
+                <img class="video" src='enieslobby/292a.gif' onclick="swapImg(this,'enieslobby/292b.jpg','enieslobby/292a.gif',1);" />
+                <img src='enieslobby/293a.jpg' onclick="swapImg(this,'enieslobby/293b.jpg','enieslobby/293a.jpg',1);" />
+                <img src='enieslobby/294a.jpg' onclick="swapImg(this,'enieslobby/294b.jpg','enieslobby/294a.jpg',1);" />
+                <img src='enieslobby/295a.jpg' onclick="swapImg(this,'enieslobby/295b.jpg','enieslobby/295a.jpg',1);" />
+                <img src='enieslobby/296a.jpg' onclick="swapImg(this,'enieslobby/296b.jpg','enieslobby/296a.jpg',1);" />
+                <img src='enieslobby/297a.jpg' onclick="swapImg(this,'enieslobby/297b.jpg','enieslobby/297a.jpg',1);" />
+                <img src='enieslobby/298a.jpg' onclick="swapImg(this,'enieslobby/298b.jpg','enieslobby/298a.jpg',1);" />
+                <img src='enieslobby/299a.jpg' onclick="swapImg(this,'enieslobby/299b.jpg','enieslobby/299a.jpg',1);" />
+                <img src='enieslobby/300a.jpg' onclick="swapImg(this,'enieslobby/300b.jpg','enieslobby/300a.jpg',1);" />
+                <img src='enieslobby/301a.jpg' onclick="swapImg(this,'enieslobby/301b.jpg','enieslobby/301a.jpg',1);" />
+                <img src='enieslobby/302a.jpg' onclick="swapImg(this,'enieslobby/302b.jpg','enieslobby/302a.jpg',1);" />
+                <img src='enieslobby/303a.jpg' onclick="swapImg(this,'enieslobby/303b.jpg','enieslobby/303a.jpg',1);" />
+                <img src='enieslobby/304a.jpg' onclick="swapImg(this,'enieslobby/304b.jpg','enieslobby/304a.jpg',1);" />
+                <img src='enieslobby/305a.jpg' onclick="swapImg(this,'enieslobby/305b.jpg','enieslobby/305a.jpg',1);" />
+                <img src='enieslobby/306a.jpg' onclick="swapImg(this,'enieslobby/306b.jpg','enieslobby/306a.jpg',1);" />
+                <img src='enieslobby/307a.jpg' onclick="swapImg(this,'enieslobby/307b.jpg','enieslobby/307a.jpg',1);" />
+                <img class="video" src='enieslobby/308a.gif' onclick="swapImg(this,'enieslobby/308b.jpg','enieslobby/308a.gif',1);" />
+                <img src='enieslobby/309a.jpg' onclick="swapImg(this,'enieslobby/309b.jpg','enieslobby/309a.jpg',1);" />
             </div>
+            <map name="image-map">
+                <area target="_blank" alt="episode" title="episode" href="https://streamable.com/j5q36" coords="89,300,434,494" shape="rect">
+                <area target="_blank" alt="chapter" title="chapter" href="https://mangadex.org/chapter/64844" coords="510,299,860,495" shape="rect">
+            </map>
             <img src="/css/arrow_left.png" id="buttons" class="prev" alt="Previous" />
             <img src="/css/arrow_right.png" id="buttons" class="next" alt="Next" />
+            <div id="counter">999</div>
         </div>
         <script>
             $('.img-wrap img:gt(0)').hide();
-            $('.next').click(function () {
+            $('.next').click(function() {
                 $('.img-wrap img:first-child').fadeOut().next().fadeIn().end().appendTo('.img-wrap');
+                if (count == total){
+                    count=1;
+                    $('#counter').text(count + ' / ' + total);
+                }else{
+                count++;
+                $('#counter').text(count + ' / ' + total);
+                }
             });
-            $('.prev').click(function () {
+            $('.prev').click(function() {
                 $('.img-wrap img:first-child').fadeOut();
                 $('.img-wrap img:last-child').prependTo('.img-wrap').fadeOut();
                 $('.img-wrap img:first-child').fadeIn();
+                if (count == 1){
+                    count=total;
+                    $('#counter').text(count + ' / ' + total);
+                }else {
+                    count--;
+                    $('#counter').text(count + ' / ' + total);
+                    }
+                
+                
             });
         </script>
     </section>
-    <!--     <aside id="info">
-        <p><u>Left Click</u> to see the Manga version</p>
-        <p><u>Right click</u> to change back</p>
-    </aside> -->
 </body>
 </html>

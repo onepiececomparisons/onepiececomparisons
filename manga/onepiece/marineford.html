@@ -17,45 +17,48 @@
     <section id="three">
         <span class="title">One Piece</span>
         <span class="title2">Marineford Arc</span>
+        <span id="title3">Click image to make the switch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Right arrow skips to next image</span>
         <script type="text/javascript" src="/js/jQuery.preloadImages.js"></script>
         <script type="text/javascript">
+            var count = 1;
             $(function () {
                 var imgList = [
-                    'http://i.imgur.com/aW3kbxG.png'
-                , 'http://i.imgur.com/jKq6abh.png'
-                , 'http://i.imgur.com/04DWDW5.jpg'
-                , 'http://i.imgur.com/yxu8Htu.png'
-                , 'http://i.imgur.com/TaApckI.png'
-                , 'http://i.imgur.com/fqYlK7R.png'
-                , 'http://i.imgur.com/UOsvyvP.png'
-                , 'http://i.imgur.com/XSUnAOX.png'
-                , 'http://i.imgur.com/xRow4iY.png'
-                , 'http://i.imgur.com/aRvsgtu.png'
-                , 'http://i.imgur.com/MrwNHxl.png'
-                , 'http://i.imgur.com/lGWheYL.png'
-                , 'http://i.imgur.com/VLfa4v2.png'
-                , 'http://i.imgur.com/I6SDiUg.png'
-                , 'http://i.imgur.com/SAgXexg.png'
-                , 'http://i.imgur.com/j0gLqrl.png'
-                , 'http://i.imgur.com/IT3wQfs.png'
-                , 'http://i.imgur.com/BkgZpM4.png'
-                , 'http://i.imgur.com/dCfON5b.png'
-                , 'http://i.imgur.com/Tdcyrt5.png'
-                , 'http://i.imgur.com/is4wmpn.png'
-                , 'http://i.imgur.com/Xw5F2Iv.jpg'
-                , 'http://i.imgur.com/asXnGKS.jpg'
-                , 'http://i.imgur.com/F80xnPw.jpg'
-                , 'http://i.imgur.com/BKp8hzt.png'
-                , 'http://i.imgur.com/M4NRnm4.png'
-                , 'http://i.imgur.com/17DxAOK.jpg'
-                , 'http://i.imgur.com/9YApVTb.png'
-                , 'http://i.imgur.com/ocAHJun.png'
-                , 'http://i.imgur.com/EtnmDHR.png'
-                , 'http://i.imgur.com/dsbm1kV.png'
+               'marineford/1b.jpg',
+               'marineford/2b.jpg',
+               'marineford/3b.jpg',
+               'marineford/4b.jpg',
+               'marineford/5b.jpg',
+               'marineford/6b.jpg',
+               'marineford/7b.jpg',
+               'marineford/8b.jpg',
+               'marineford/9b.jpg',
+               'marineford/10b.jpg',
+               'marineford/11b.jpg',
+               'marineford/12b.jpg',
+               'marineford/13b.jpg',
+               'marineford/14b.jpg',
+               'marineford/15b.jpg',
+               'marineford/16b.jpg',
+               'marineford/17b.jpg',
+               'marineford/18b.jpg',
+               'marineford/19b.jpg',
+               'marineford/20b.jpg',
+               'marineford/21b.jpg',
+               'marineford/22b.jpg',
+               'marineford/23b.jpg',
+               'marineford/24b.jpg',
+               'marineford/25b.jpg',
+               'marineford/26b.jpg',
+               'marineford/27b.jpg',
+               'marineford/28b.jpg',
+               'marineford/29b.jpg',
+               'marineford/30b.jpg'
             ];
                 var galleryHtml = '';
                 $(imgList).preloadImages(function (isSucceed, finishedCount, len, src) {
                     var per = parseInt((finishedCount / len) * 100);
+                    $('#counter').text(count + ' / ' + len);
+                    window.total = len;
                     $('#num').text(finishedCount + ' / ' + len);
                     $('#progress').css({
                         width: per + '%'
@@ -88,49 +91,66 @@
         </div>
         <div id="img-grp-wrap">
             <div class="img-wrap">
-                <img src='http://i.imgur.com/6UpMid4.jpg' onclick="swapImg(this,'http://i.imgur.com/jKq6abh.png','http://i.imgur.com/6UpMid4.jpg',1);" />
-                <img src='http://i.imgur.com/mK5jDLI.jpg' onclick="swapImg(this,'http://i.imgur.com/04DWDW5.jpg','http://i.imgur.com/mK5jDLI.jpg',1);" />
-                <img src='http://i.imgur.com/ihNYHjI.jpg' onclick="swapImg(this,'http://i.imgur.com/yxu8Htu.png','http://i.imgur.com/ihNYHjI.jpg',1);" />
-                <img src='http://i.imgur.com/h0mMgCw.jpg' onclick="swapImg(this,'http://i.imgur.com/TaApckI.png','http://i.imgur.com/h0mMgCw.jpg',1);" />
-                <img src='http://i.imgur.com/0X0wjne.jpg' onclick="swapImg(this,'http://i.imgur.com/fqYlK7R.png','http://i.imgur.com/0X0wjne.jpg',1);" />
-                <img src='http://i.imgur.com/zauxsdD.jpg' onclick="swapImg(this,'http://i.imgur.com/UOsvyvP.jpg','http://i.imgur.com/zauxsdD.jpg',1);" />
-                <img src='http://i.imgur.com/Bf5X4tG.jpg' onclick="swapImg(this,'http://i.imgur.com/XSUnAOX.png','http://i.imgur.com/Bf5X4tG.jpg',1);" />
-                <img src='http://i.imgur.com/R6Y3dkU.jpg' onclick="swapImg(this,'http://i.imgur.com/xRow4iY.png','http://i.imgur.com/R6Y3dkU.jpg',1);" />
-                <img src='http://i.imgur.com/Veszk9n.jpg' onclick="swapImg(this,'http://i.imgur.com/aRvsgtu.jpg','http://i.imgur.com/Veszk9n.jpg',1);" />
-                <img src='http://i.imgur.com/bfnOLwX.jpg' onclick="swapImg(this,'http://i.imgur.com/MrwNHxl.png','http://i.imgur.com/bfnOLwX.jpg',1);" />
-                <img src='http://i.imgur.com/j51EJ7G.jpg' onclick="swapImg(this,'http://i.imgur.com/lGWheYL.png','http://i.imgur.com/j51EJ7G.jpg',1);" />
-                <img src='http://i.imgur.com/L4WDWBL.jpg' onclick="swapImg(this,'http://i.imgur.com/VLfa4v2.jpg','http://i.imgur.com/L4WDWBL.jpg',1);" />
-                <img src='http://i.imgur.com/eXSd55U.jpg' onclick="swapImg(this,'http://i.imgur.com/I6SDiUg.png','http://i.imgur.com/eXSd55U.jpg',1);" />
-                <img src='http://i.imgur.com/pYyePSh.jpg' onclick="swapImg(this,'http://i.imgur.com/SAgXexg.png','http://i.imgur.com/pYyePSh.jpg',1);" />
-                <img src='http://i.imgur.com/hwqtIuB.jpg' onclick="swapImg(this,'http://i.imgur.com/j0gLqrl.png','http://i.imgur.com/hwqtIuB.jpg',1);" />
-                <img src='http://i.imgur.com/BxJn46u.jpg' onclick="swapImg(this,'http://i.imgur.com/IT3wQfs.png','http://i.imgur.com/BxJn46u.jpg',1);" />
-                <img src='http://i.imgur.com/bEuotDT.jpg' onclick="swapImg(this,'http://i.imgur.com/BkgZpM4.png','http://i.imgur.com/bEuotDT.jpg',1);" />
-                <img src='http://i.imgur.com/pRqBwgN.jpg' onclick="swapImg(this,'http://i.imgur.com/dCfON5b.png','http://i.imgur.com/pRqBwgN.jpg',1);" />
-                <img src='http://i.imgur.com/43hRoqm.jpg' onclick="swapImg(this,'http://i.imgur.com/Tdcyrt5.png','http://i.imgur.com/43hRoqm.jpg',1);" />
-                <img src='http://i.imgur.com/KqZM4rq.jpg' onclick="swapImg(this,'http://i.imgur.com/is4wmpn.png','http://i.imgur.com/KqZM4rq.jpg',1);" />
-                <img src='http://i.imgur.com/zoFeRee.jpg' onclick="swapImg(this,'http://i.imgur.com/Xw5F2Iv.jpg','http://i.imgur.com/zoFeRee.jpg',1);" />
-                <img src='http://i.imgur.com/HOX8Ffm.jpg' onclick="swapImg(this,'http://i.imgur.com/asXnGKS.jpg','http://i.imgur.com/HOX8Ffm.jpg',1);" />
-                <img src='http://i.imgur.com/qQrgfhq.jpg' onclick="swapImg(this,'http://i.imgur.com/F80xnPw.jpg','http://i.imgur.com/qQrgfhq.jpg',1);" />
-                <img src='http://i.imgur.com/Ghp666x.jpg' onclick="swapImg(this,'http://i.imgur.com/BKp8hzt.png','http://i.imgur.com/Ghp666x.jpg',1);" />
-                <img src='http://i.imgur.com/FDEyDhb.jpg' onclick="swapImg(this,'http://i.imgur.com/M4NRnm4.png','http://i.imgur.com/FDEyDhb.jpg',1);" />
-                <img src='http://i.imgur.com/qilc3Eg.jpg' onclick="swapImg(this,'http://i.imgur.com/17DxAOK.jpg','http://i.imgur.com/qilc3Eg.jpg',1);" />
-                <img src='http://i.imgur.com/76RcBNK.jpg' onclick="swapImg(this,'http://i.imgur.com/9YApVTb.png','http://i.imgur.com/76RcBNK.jpg',1);" />
-                <img src='http://i.imgur.com/a8fmQxp.jpg' onclick="swapImg(this,'http://i.imgur.com/ocAHJun.png','http://i.imgur.com/a8fmQxp.jpg',1);" />
-                <img src='http://i.imgur.com/bnDGwjl.jpg' onclick="swapImg(this,'http://i.imgur.com/EtnmDHR.png','http://i.imgur.com/bnDGwjl.jpg',1);" />
-                <img src='http://i.imgur.com/AWC2cC5.jpg' onclick="swapImg(this,'http://i.imgur.com/dsbm1kV.png','http://i.imgur.com/AWC2cC5.jpg',1);" />
+                <img src='marineford/1a.jpg' onclick="swapImg(this,'marineford/1b.jpg','marineford/1a.jpg',1);" />
+                <img src='marineford/2a.jpg' onclick="swapImg(this,'marineford/2b.jpg','marineford/2a.jpg',1);" />
+                <img src='marineford/3a.jpg' onclick="swapImg(this,'marineford/3b.jpg','marineford/3a.jpg',1);" />
+                <img src='marineford/4a.jpg' onclick="swapImg(this,'marineford/4b.jpg','marineford/4a.jpg',1);" />
+                <img src='marineford/5a.jpg' onclick="swapImg(this,'marineford/5b.jpg','marineford/5a.jpg',1);" />
+                <img src='marineford/6a.jpg' onclick="swapImg(this,'marineford/6b.jpg','marineford/6a.jpg',1);" />
+                <img src='marineford/7a.jpg' onclick="swapImg(this,'marineford/7b.jpg','marineford/7a.jpg',1);" />
+                <img src='marineford/8a.jpg' onclick="swapImg(this,'marineford/8b.jpg','marineford/8a.jpg',1);" />
+                <img src='marineford/9a.jpg' onclick="swapImg(this,'marineford/9b.jpg','marineford/9a.jpg',1);" />
+                <img src='marineford/10a.jpg' onclick="swapImg(this,'marineford/10b.jpg','marineford/10a.jpg',1);" />
+                <img src='marineford/11a.jpg' onclick="swapImg(this,'marineford/11b.jpg','marineford/11a.jpg',1);" />
+                <img src='marineford/12a.jpg' onclick="swapImg(this,'marineford/12b.jpg','marineford/12a.jpg',1);" />
+                <img src='marineford/13a.jpg' onclick="swapImg(this,'marineford/13b.jpg','marineford/13a.jpg',1);" />
+                <img src='marineford/14a.jpg' onclick="swapImg(this,'marineford/14b.jpg','marineford/14a.jpg',1);" />
+                <img src='marineford/15a.jpg' onclick="swapImg(this,'marineford/15b.jpg','marineford/15a.jpg',1);" />
+                <img src='marineford/16a.jpg' onclick="swapImg(this,'marineford/16b.jpg','marineford/16a.jpg',1);" />
+                <img src='marineford/17a.jpg' onclick="swapImg(this,'marineford/17b.jpg','marineford/17a.jpg',1);" />
+                <img src='marineford/18a.jpg' onclick="swapImg(this,'marineford/18b.jpg','marineford/18a.jpg',1);" />
+                <img src='marineford/19a.jpg' onclick="swapImg(this,'marineford/19b.jpg','marineford/19a.jpg',1);" />
+                <img src='marineford/20a.jpg' onclick="swapImg(this,'marineford/20b.jpg','marineford/20a.jpg',0);" />
+                <img src='marineford/21a.jpg' onclick="swapImg(this,'marineford/21b.jpg','marineford/21a.jpg',1);" />
+                <img src='marineford/22a.jpg' onclick="swapImg(this,'marineford/22b.jpg','marineford/22a.jpg',1);" />
+                <img src='marineford/23a.jpg' onclick="swapImg(this,'marineford/23b.jpg','marineford/23a.jpg',1);" />
+                <img src='marineford/24a.jpg' onclick="swapImg(this,'marineford/24b.jpg','marineford/24a.jpg',1);" />
+                <img src='marineford/25a.jpg' onclick="swapImg(this,'marineford/25b.jpg','marineford/25a.jpg',1);" />
+                <img src='marineford/26a.jpg' onclick="swapImg(this,'marineford/26b.jpg','marineford/26a.jpg',1);" />
+                <img src='marineford/27a.jpg' onclick="swapImg(this,'marineford/27b.jpg','marineford/27a.jpg',1);" />
+                <img src='marineford/28a.jpg' onclick="swapImg(this,'marineford/28b.jpg','marineford/28a.jpg',1);" />
+                <img src='marineford/29a.jpg' onclick="swapImg(this,'marineford/29b.jpg','marineford/29a.jpg',1);" />
+                <img src='marineford/30a.jpg' onclick="swapImg(this,'marineford/30b.jpg','marineford/30a.jpg',1);" />
             </div>
             <img src="/css/arrow_left.png" id="buttons" class="prev" alt="Previous" />
             <img src="/css/arrow_right.png" id="buttons" class="next" alt="Next" />
+            <div id="counter">999</div>
         </div>
         <script>
             $('.img-wrap img:gt(0)').hide();
-            $('.next').click(function () {
+            $('.next').click(function() {
                 $('.img-wrap img:first-child').fadeOut().next().fadeIn().end().appendTo('.img-wrap');
+                if (count == total){
+                    count=1;
+                    $('#counter').text(count + ' / ' + total);
+                }else{
+                count++;
+                $('#counter').text(count + ' / ' + total);
+                }
             });
-            $('.prev').click(function () {
+            $('.prev').click(function() {
                 $('.img-wrap img:first-child').fadeOut();
                 $('.img-wrap img:last-child').prependTo('.img-wrap').fadeOut();
                 $('.img-wrap img:first-child').fadeIn();
+                if (count == 1){
+                    count=total;
+                    $('#counter').text(count + ' / ' + total);
+                }else {
+                    count--;
+                    $('#counter').text(count + ' / ' + total);
+                    }
+                
+                
             });
         </script>
     </section>
